@@ -5,6 +5,7 @@ import { ServicePanel } from '../components/sections/ServicePanel';
 import { Capabilities } from '../components/sections/Capabilities';
 import { FeatureSplit } from '../components/sections/FeatureSplit';
 import { Applications } from '../components/sections/Applications';
+import { VisionMission } from '../components/sections/VisionMission';
 import { CTABanner } from '../components/sections/CTABanner';
 import { ContactSection } from '../components/sections/ContactSection';
 
@@ -17,7 +18,7 @@ export const HomePage: React.FC = () => {
       {/* Factual Trust Indicators Strip */}
       <TrustStrip />
 
-      {/* Signature Dark Teal Featured Service Panel (scraped "WHAT WE DO" aligned) */}
+      {/* Signature Dark Teal Featured Service Panel */}
       <ServicePanel />
 
       {/* Capabilities Image-Cards Grid */}
@@ -26,8 +27,11 @@ export const HomePage: React.FC = () => {
       {/* Split Feature / Why Ajasra Facility & Process Section */}
       <FeatureSplit />
 
-      {/* Industrial Applications & Sectors */}
+      {/* Industries We Cater (Construction, Engineering, Agriculture, Energy, Hardware, Automotive, Shipping) */}
       <Applications />
+
+      {/* Our Vision & Mission Section (scraped from ajasravervetech.com) */}
+      <VisionMission />
 
       {/* Wide Industrial Call-To-Action Banner */}
       <CTABanner />
