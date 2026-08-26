@@ -4,34 +4,34 @@ import { SectionHeading } from '../ui/SectionHeading';
 import { Reveal } from '../ui/Reveal';
 
 export const Applications: React.FC = () => {
-  const { applications } = siteContent;
+  const { industriesWeCater } = siteContent;
 
   return (
     <section id="applications" className="section-spacing">
       <div className="site-container">
         <Reveal>
           <SectionHeading
-            eyebrow={applications.eyebrow}
-            title={applications.heading}
-            subtitle={applications.subheadline}
+            eyebrow={industriesWeCater.eyebrow}
+            title={industriesWeCater.heading}
+            subtitle={industriesWeCater.subheadline}
             alignment="center"
           />
         </Reveal>
 
-        {/* 3-Card Industrial Applications Grid matching the screenshot's 3-card block */}
+        {/* 7 Industries We Cater Grid matching authentic website structure */}
         <div
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: 'clamp(1.25rem, 3vw, 2rem)'
+            gap: 'clamp(1.25rem, 2.5vw, 1.75rem)'
           }}
         >
-          {applications.categories.map((app, index) => (
-            <Reveal key={app.id} delay={index * 120}>
+          {industriesWeCater.items.map((item, index) => (
+            <Reveal key={item.id} delay={index * 60}>
               <div
                 className="image-card application-card"
                 style={{
-                  height: '440px',
+                  height: '420px',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
@@ -40,8 +40,8 @@ export const Applications: React.FC = () => {
               >
                 {/* Background Image */}
                 <img
-                  src={app.image}
-                  alt={app.alt}
+                  src={item.image}
+                  alt={item.alt}
                   loading="lazy"
                   className="image-card-img"
                   style={{
@@ -57,7 +57,7 @@ export const Applications: React.FC = () => {
                 <div
                   className="image-card-overlay"
                   style={{
-                    background: 'linear-gradient(180deg, rgba(11, 23, 36, 0.2) 0%, rgba(11, 23, 36, 0.4) 40%, rgba(11, 23, 36, 0.95) 100%)'
+                    background: 'linear-gradient(180deg, rgba(11, 23, 36, 0.25) 0%, rgba(11, 23, 36, 0.5) 35%, rgba(11, 23, 36, 0.96) 100%)'
                   }}
                 >
                   {/* Top Index Number Badge */}
@@ -80,7 +80,7 @@ export const Applications: React.FC = () => {
                       letterSpacing: '0.08em'
                     }}
                   >
-                    <span>SECTOR {app.index}</span>
+                    <span>INDUSTRY {item.index}</span>
                   </div>
 
                   {/* Bottom Content */}
@@ -90,31 +90,31 @@ export const Applications: React.FC = () => {
                         fontSize: 'var(--text-xl)',
                         fontWeight: '800',
                         color: 'var(--color-white)',
-                        marginBottom: '0.625rem',
+                        marginBottom: '0.5rem',
                         letterSpacing: '-0.02em'
                       }}
                     >
-                      {app.title}
+                      {item.title}
                     </h3>
                     <p
                       style={{
-                        fontSize: 'var(--text-sm)',
-                        color: 'rgba(255, 255, 255, 0.8)',
-                        lineHeight: '1.55',
+                        fontSize: 'var(--text-xs)',
+                        color: 'rgba(255, 255, 255, 0.82)',
+                        lineHeight: '1.6',
                         marginBottom: '1.25rem'
                       }}
                     >
-                      {app.description}
+                      {item.description}
                     </p>
 
                     <a
-                      href="#contact"
+                      href="/#contact"
                       style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
-                        padding: '0.75rem 1.25rem',
-                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        padding: '0.7rem 1.25rem',
+                        backgroundColor: 'rgba(255, 255, 255, 0.12)',
                         backdropFilter: 'blur(8px)',
                         border: '1px solid rgba(255, 255, 255, 0.25)',
                         borderRadius: 'var(--radius-md)',
@@ -127,7 +127,7 @@ export const Applications: React.FC = () => {
                       }}
                       className="app-card-btn"
                     >
-                      <span>Inquire for {app.title}</span>
+                      <span>Inquire for {item.title}</span>
                       <span className="app-card-arrow">↗</span>
                     </a>
                   </div>

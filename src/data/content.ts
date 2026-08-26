@@ -31,7 +31,7 @@ export interface CapabilityCard {
   alt: string;
 }
 
-export interface ApplicationCategory {
+export interface IndustryItem {
   id: string;
   index: string;
   title: string;
@@ -59,7 +59,7 @@ export const siteContent = {
     eyebrow: "PRECISION HOT DIP GALVANIZING",
     headline: "Protecting steel for what comes next.",
     subheadline:
-      "Specification-led hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 650°C providing double cathodic and barrier protection with ~3600 psi coating strength.",
+      "Specification-led hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 650°C providing double cathodic and barrier protection with ~3600 psi coating strength in accordance with IS-2629.",
     locationBadge: "Serving industrial projects from Harohalli, Karnataka.",
     primaryCta: "Start a project",
     secondaryCta: "Explore our process",
@@ -71,8 +71,22 @@ export const siteContent = {
     { label: "Double Protection", sublabel: "Cathodic sacrificial & barrier defense" },
     { label: "~3600 PSI Strength", sublabel: "High metallurgical bond adhesion" },
     { label: "Up to 650°C Bath", sublabel: "Electrically heated molten zinc furnace" },
-    { label: "Harohalli, Karnataka", sublabel: "IS 2629 aligned operations" }
+    { label: "Harohalli, Karnataka", sublabel: "IS-2629 aligned operations" }
   ] as TrustIndicator[],
+
+  // Authentic Vision & Mission scraped verbatim from ajasravervetech.com
+  visionMission: {
+    eyebrow: "OUR CORE VALUES",
+    title: "Our Vision & Mission",
+    vision: {
+      title: "Our Vision",
+      text: "Our vision is to provide quality services to potential customers and prioritize customer satisfaction through environmentally friendly procedures, along with the help of team work and coordination to uphold human values at all points of time and inspiring each of us to believe that hard work and dedication can take us to great heights."
+    },
+    mission: {
+      title: "Our Mission",
+      text: "Our mission is to capture the potential market quickly and provide the best and quality service by inspiring and implementing good values."
+    }
+  },
 
   // Authentic About Us content scraped from live site
   aboutPage: {
@@ -133,7 +147,7 @@ export const siteContent = {
     eyebrow: "WHAT WE DO",
     heading: "Built for protection. Ready for industry.",
     description:
-      "We provide the service of hot dip galvanization to iron, steel and ferrous alloys to give them long-term resistance to abrasion, environmental impacts, and wear by immersing components in pure molten zinc.",
+      "We provide the service of hot dip galvanization to iron, steel and ferrous alloys to give them long-term resistance to abrasion, environmental impacts, and wear by immersing components in pure molten zinc in accordance with IS-2629.",
     features: [
       {
         id: "double-corrosion-defense",
@@ -258,7 +272,7 @@ export const siteContent = {
   capabilities: {
     eyebrow: "SOLUTIONS & SERVICES",
     heading: "Capabilities that keep work moving.",
-    subheadline: "Robust zinc protection tailored to fabrication complexities, batch sizes, and demanding structural requirements.",
+    subheadline: "Robust zinc protection tailored to fabrication complexities, batch sizes, and demanding structural requirements in accordance with IS-2629.",
     items: [
       {
         id: "hot-dip-galvanizing",
@@ -327,39 +341,77 @@ export const siteContent = {
     cta: "Discuss your requirement"
   },
 
-  applications: {
-    eyebrow: "INDUSTRIAL APPLICATIONS",
-    heading: "Protection for the work behind the work.",
-    subheadline: "Ensuring long service life across vital commercial, industrial, and infrastructure steel assets.",
-    categories: [
+  // Exact authentic 7 industries cater list scraped verbatim from ajasravervetech.com
+  industriesWeCater: {
+    eyebrow: "INDUSTRIES WE CATER",
+    heading: "Industries We Cater",
+    subheadline:
+      "We provide industries with high quality customized ISO material standard precision galvanizing services in accordance with IS-2629.",
+    items: [
       {
-        id: "app-structural",
+        id: "ind-construction",
         index: "01",
-        title: "Structural Steel",
+        title: "Construction",
         description:
-          "Industrial warehouse frameworks, pre-engineered buildings, bridge girders, and architectural steel columns.",
+          "Street furniture, building frameworks, steel frames, balconies, verandahs, staircases, ladders and walkways are susceptible to oxygen and need to be coated with a layer of galvanized steel to make them more durable and safer.",
         image: "/images/structural-steel.jpg",
-        alt: "Galvanized structural steel columns and I-beams"
+        alt: "Galvanized structural steel frameworks and building frames"
       },
       {
-        id: "app-fabrication",
+        id: "ind-general-engineering",
         index: "02",
-        title: "Industrial Fabrication",
+        title: "General Engineering",
         description:
-          "Pressure vessels, conveyor frames, platforms, handrails, skids, and customized heavy manufacturing weldments.",
+          "Engines, machines and structures wear out from time to time. It is advisable to keep them protected through galvanizing.",
         image: "/images/steel-fabrication.jpg",
-        alt: "Custom fabricated welded steel assemblies"
+        alt: "Galvanized machinery, frames, and engineered steel assemblies"
       },
       {
-        id: "app-infrastructure",
+        id: "ind-agricultural",
         index: "03",
-        title: "Infrastructure & Energy",
+        title: "Agricultural Equipments",
         description:
-          "Transmission towers, substation steel, railway electrification masts, highway guardrails, and solar PV trackers.",
+          "Farming equipment, irrigation systems, grain systems are open to the atmosphere and in desperate need of prevention of rust.",
         image: "/images/infrastructure-steel.jpg",
-        alt: "Galvanized steel infrastructure and transmission lattice towers"
+        alt: "Galvanized agricultural structures and irrigation pipe components"
+      },
+      {
+        id: "ind-energy",
+        index: "04",
+        title: "Energy",
+        description:
+          "As an alternate source of energy, solar cells are more prone to external elements of rust, dust and decay. Galvanization helps in utilizing all of the energy provided by the solar cells.",
+        image: "/images/infrastructure-steel.jpg",
+        alt: "Solar mounting purlins and renewable energy steel structures"
+      },
+      {
+        id: "ind-hardwares",
+        index: "05",
+        title: "Hardwares",
+        description:
+          "We undertake galvanizing services for Pole line hardware, nuts and bolts, washers, hinges brackets, and other essential tools and equipment, fasteners, among others.",
+        image: "/images/zinc-kettle-dip.jpg",
+        alt: "Centrifuge hot dip galvanized pole line hardware and fasteners"
+      },
+      {
+        id: "ind-automotive",
+        index: "06",
+        title: "Automotive",
+        description:
+          "Skeletal body of the vehicles, Bumpers and Reinforcements, Door Beams and Seatings, Chassis and Frames are vulnerable to rust and need to be galvanized periodically.",
+        image: "/images/facility-logistics.jpg",
+        alt: "Automotive chassis, brackets, and tubular frame galvanizing"
+      },
+      {
+        id: "ind-shipping",
+        index: "07",
+        title: "Shipping",
+        description:
+          "Gear and ring locks, boat trailers, connecting rods, anchor lifting shackle are liable to corrosion. Help prevent and protect them through our galvanizing services.",
+        image: "/images/galvanizing-hero.jpg",
+        alt: "Marine hardware, boat trailers, and anchor lifting shackles"
       }
-    ] as ApplicationCategory[]
+    ] as IndustryItem[]
   },
 
   ctaBanner: {
@@ -375,7 +427,7 @@ export const siteContent = {
     eyebrow: "GET IN TOUCH",
     heading: "Start your galvanizing project with us.",
     description:
-      "Whether you need an immediate batch quote, guidance on venting design, or a reliable long-term galvanizing partner in Harohalli.",
+      "Whether you need an immediate batch quote, guidance on venting design, or a reliable long-term galvanizing partner in Harohalli in accordance with IS-2629.",
     whatsappDirectNote: "Submitting this form connects directly with our team on WhatsApp for an immediate response."
   }
 };

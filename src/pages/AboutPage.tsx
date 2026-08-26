@@ -10,7 +10,7 @@ export const AboutPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { aboutPage } = siteContent;
+  const { aboutPage, visionMission, industriesWeCater } = siteContent;
 
   return (
     <div className="about-page" style={{ paddingTop: 'clamp(2rem, 4vw, 3.5rem)', paddingBottom: 'clamp(4rem, 6vw, 6rem)' }}>
@@ -69,6 +69,162 @@ export const AboutPage: React.FC = () => {
             </div>
           </div>
         </Reveal>
+      </section>
+
+      {/* OUR VISION & MISSION Section (scraped verbatim) */}
+      <section className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
+        <div className="dark-panel-wrapper" style={{ padding: 0 }}>
+          <div className="dark-panel">
+            <Reveal>
+              <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto clamp(2rem, 4vw, 3rem)' }}>
+                <div className="eyebrow-badge eyebrow-badge-teal">
+                  <span className="eyebrow-dot" aria-hidden="true" />
+                  {visionMission.eyebrow}
+                </div>
+                <h2
+                  style={{
+                    fontSize: 'var(--text-3xl)',
+                    fontWeight: '800',
+                    color: 'var(--color-white)',
+                    lineHeight: '1.2'
+                  }}
+                >
+                  {visionMission.title}
+                </h2>
+              </div>
+            </Reveal>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gap: 'clamp(1.5rem, 3vw, 2.5rem)'
+              }}
+            >
+              {/* Vision Card */}
+              <Reveal delay={80}>
+                <div
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'clamp(1.75rem, 4vw, 2.5rem)',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        backgroundColor: 'rgba(216, 243, 93, 0.15)',
+                        border: '1px solid rgba(216, 243, 93, 0.25)',
+                        padding: '4px 12px',
+                        borderRadius: 'var(--radius-full)',
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: '800',
+                        color: 'var(--color-lime)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        marginBottom: '1.25rem'
+                      }}
+                    >
+                      🔭 {visionMission.vision.title}
+                    </div>
+                    <p
+                      style={{
+                        fontSize: 'var(--text-sm)',
+                        color: 'rgba(255, 255, 255, 0.88)',
+                        lineHeight: '1.75',
+                        textAlign: 'justify'
+                      }}
+                    >
+                      {visionMission.vision.text}
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: '1.5rem',
+                      paddingTop: '1rem',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '700'
+                    }}
+                  >
+                    Environmental Stewardship & Team Dedication
+                  </div>
+                </div>
+              </Reveal>
+
+              {/* Mission Card */}
+              <Reveal delay={160}>
+                <div
+                  style={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    border: '1px solid rgba(255, 255, 255, 0.12)',
+                    borderRadius: 'var(--radius-lg)',
+                    padding: 'clamp(1.75rem, 4vw, 2.5rem)',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        backgroundColor: 'rgba(216, 243, 93, 0.15)',
+                        border: '1px solid rgba(216, 243, 93, 0.25)',
+                        padding: '4px 12px',
+                        borderRadius: 'var(--radius-full)',
+                        fontSize: 'var(--text-xs)',
+                        fontWeight: '800',
+                        color: 'var(--color-lime)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.1em',
+                        marginBottom: '1.25rem'
+                      }}
+                    >
+                      🎯 {visionMission.mission.title}
+                    </div>
+                    <p
+                      style={{
+                        fontSize: 'var(--text-sm)',
+                        color: 'rgba(255, 255, 255, 0.88)',
+                        lineHeight: '1.75',
+                        textAlign: 'justify'
+                      }}
+                    >
+                      {visionMission.mission.text}
+                    </p>
+                  </div>
+
+                  <div
+                    style={{
+                      marginTop: '1.5rem',
+                      paddingTop: '1rem',
+                      borderTop: '1px solid rgba(255, 255, 255, 0.08)',
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '700'
+                    }}
+                  >
+                    Quality Execution & Good Values
+                  </div>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Leadership Section: YOU'RE IN GOOD HANDS */}
@@ -232,13 +388,107 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* 7 Industries We Cater Grid */}
+      <section className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
+        <Reveal>
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(2rem, 4vw, 3.5rem)' }}>
+            <div className="eyebrow-badge">
+              <span className="eyebrow-dot" aria-hidden="true" />
+              {industriesWeCater.eyebrow}
+            </div>
+            <h2 className="section-headline">
+              {industriesWeCater.heading}
+            </h2>
+            <p className="section-subtext" style={{ margin: '0.875rem auto 0' }}>
+              {industriesWeCater.subheadline}
+            </p>
+          </div>
+        </Reveal>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: '1.25rem'
+          }}
+        >
+          {industriesWeCater.items.map((item, index) => (
+            <Reveal key={item.id} delay={index * 40}>
+              <div
+                style={{
+                  backgroundColor: 'var(--color-paper-subtle)',
+                  border: '1px solid var(--color-border)',
+                  borderRadius: 'var(--radius-lg)',
+                  padding: '1.5rem',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem' }}>
+                    <h3
+                      style={{
+                        fontSize: 'var(--text-base)',
+                        fontWeight: '800',
+                        color: 'var(--color-ink)',
+                        letterSpacing: '-0.01em'
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+                    <span
+                      style={{
+                        fontSize: '0.6875rem',
+                        fontWeight: '700',
+                        color: 'var(--color-deep-teal)',
+                        backgroundColor: 'rgba(13, 58, 61, 0.1)',
+                        padding: '2px 8px',
+                        borderRadius: 'var(--radius-sm)'
+                      }}
+                    >
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <p
+                    style={{
+                      fontSize: 'var(--text-xs)',
+                      color: 'var(--color-muted)',
+                      lineHeight: '1.6'
+                    }}
+                  >
+                    {item.description}
+                  </p>
+                </div>
+
+                <div
+                  style={{
+                    marginTop: '1.25rem',
+                    paddingTop: '0.75rem',
+                    borderTop: '1px solid var(--color-border-subtle)',
+                    fontSize: '0.6875rem',
+                    fontWeight: '700',
+                    color: 'var(--color-deep-teal)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.06em'
+                  }}
+                >
+                  IS-2629 Standard Finishing
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Ferrous Products & Components Scope */}
       <section className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
         <Reveal>
           <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(2rem, 4vw, 3.5rem)' }}>
             <div className="eyebrow-badge">
               <span className="eyebrow-dot" aria-hidden="true" />
-              GALVANIZING PRODUCT PORTFOLIO
+              COMPONENT PORTFOLIO
             </div>
             <h2 className="section-headline">
               Ferrous Products & Engineering Components We Process
@@ -260,22 +510,23 @@ export const AboutPage: React.FC = () => {
             <Reveal key={item.title} delay={index * 40}>
               <div
                 style={{
-                  backgroundColor: 'var(--color-paper-subtle)',
+                  backgroundColor: 'var(--color-white)',
                   border: '1px solid var(--color-border)',
                   borderRadius: 'var(--radius-lg)',
-                  padding: '1.5rem',
+                  padding: '1.25rem',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'space-between',
-                  height: '100%'
+                  height: '100%',
+                  boxShadow: 'var(--shadow-sm)'
                 }}
               >
                 <div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '0.4rem' }}>
                     <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--color-copper)' }} />
                     <h3
                       style={{
-                        fontSize: 'var(--text-base)',
+                        fontSize: 'var(--text-sm)',
                         fontWeight: '800',
                         color: 'var(--color-ink)',
                         letterSpacing: '-0.01em'
@@ -293,21 +544,6 @@ export const AboutPage: React.FC = () => {
                   >
                     {item.desc}
                   </p>
-                </div>
-
-                <div
-                  style={{
-                    marginTop: '1.25rem',
-                    paddingTop: '0.75rem',
-                    borderTop: '1px solid var(--color-border-subtle)',
-                    fontSize: '0.6875rem',
-                    fontWeight: '700',
-                    color: 'var(--color-deep-teal)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em'
-                  }}
-                >
-                  IS 2629 Aligned Coating
                 </div>
               </div>
             </Reveal>
