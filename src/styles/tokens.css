@@ -1,0 +1,95 @@
+:root {
+  /* Color System */
+  --color-ink: #0B1724;
+  --color-ink-light: #182838;
+  --color-ink-dark: #050B12;
+  
+  --color-deep-teal: #0D3A3D;
+  --color-deep-teal-dark: #072528;
+  --color-deep-teal-surface: #124448;
+  --color-deep-teal-border: rgba(216, 243, 93, 0.18);
+
+  --color-lime: #D8F35D;
+  --color-lime-hover: #c9e449;
+  --color-lime-dark: #a9c629;
+  --color-lime-tint: rgba(216, 243, 93, 0.12);
+
+  --color-copper: #C87549;
+  --color-copper-light: #df885a;
+  --color-copper-tint: rgba(200, 117, 73, 0.12);
+
+  --color-paper: #F4F6F3;
+  --color-paper-subtle: #FAFBF9;
+  --color-paper-dark: #E6EAE5;
+
+  --color-white: #FFFFFF;
+  --color-muted: #607080;
+  --color-muted-light: #8CA0B3;
+  --color-muted-dark: #475564;
+
+  --color-border: #D9E0DF;
+  --color-border-subtle: #EAEFED;
+  --color-border-dark: rgba(255, 255, 255, 0.14);
+
+  /* WhatsApp Brand Color */
+  --color-whatsapp: #25D366;
+  --color-whatsapp-dark: #1EBE5D;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.2vw, 2.375rem);
+  --text-4xl: clamp(2.25rem, 1.85rem + 1.8vw, 3rem);
+  --text-5xl: clamp(2.75rem, 2.1rem + 2.8vw, 4rem);
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container-max: 1240px;
+  --container-narrow: 920px;
+  --header-height: 72px;
+
+  /* Border Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-2xl: 36px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(11, 23, 36, 0.05);
+  --shadow-md: 0 4px 14px rgba(11, 23, 36, 0.08);
+  --shadow-lg: 0 10px 30px rgba(11, 23, 36, 0.12);
+  --shadow-xl: 0 20px 45px rgba(11, 23, 36, 0.16);
+  --shadow-card: 0 2px 8px rgba(11, 23, 36, 0.04), 0 12px 28px rgba(11, 23, 36, 0.06);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Focus Indicator */
+  --focus-ring: 0 0 0 3px rgba(216, 243, 93, 0.6), 0 0 0 1px var(--color-deep-teal);
+}
