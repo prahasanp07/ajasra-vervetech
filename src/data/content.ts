@@ -8,6 +8,7 @@ export interface ServiceFeature {
   number: string;
   title: string;
   description: string;
+  bulletPoints?: string[];
 }
 
 export interface ProcessStage {
@@ -147,7 +148,7 @@ export const siteContent = {
     eyebrow: "WHAT WE DO",
     heading: "Built for protection. Ready for industry.",
     description:
-      "We provide the service of hot dip galvanization to iron, steel and ferrous alloys to give them long-term resistance to abrasion, environmental impacts, and wear by immersing components in pure molten zinc in accordance with IS-2629.",
+      "We provide the service of hot dip galvanization to iron, steel and ferrous alloys to give them long-term resistant to corrosion, abrasion, environmental impacts, and wear by immersing components in pure molten zinc in accordance with IS-2629.",
     features: [
       {
         id: "double-corrosion-defense",
@@ -159,14 +160,14 @@ export const siteContent = {
       {
         id: "high-coating-strength",
         number: "02",
-        title: "3600 PSI Bond Strength",
+        title: "Higher Bond Strength",
         description:
           "Metallurgical reaction produces durable zinc-iron alloy layers that are physically stronger than the base steel itself."
       },
       {
         id: "high-temp-bath",
         number: "03",
-        title: "Controlled Zinc Bath (Up to 650°C)",
+        title: "Controlled Zinc Bath (Up to 480°C)",
         description:
           "Electrically heated melting furnace maintaining uniform bath temperature for complete alloy layer development."
       },
@@ -175,7 +176,28 @@ export const siteContent = {
         number: "04",
         title: "Centrifuge Excess Removal & Quench",
         description:
-          "High-speed centrifuge spin to remove surplus zinc followed by de-oxidant quench cooling to stabilize finish."
+          "High-speed centrifuge spin to remove surplus zinc followed by passivation quench cooling to stabilize finish."
+      },
+      {
+        id: "inspection-packing",
+        number: "05",
+        title: "Inspection & packing",
+        description:
+          "Visual inspection for coating uniformity followed by pneumatic and mechanical handling for packing."
+      },
+      {
+        id: "inhouse-lab",
+        number: "06",
+        title: "In-House Lab Facility",
+        description:
+          "In-house lab facility testing as per customer requirement:",
+        bulletPoints: [
+          "IS-2629",
+          "IS-3203",
+          "IS-2633",
+          "IS-6745",
+          "As per customer requirement"
+        ]
       }
     ] as ServiceFeature[]
   },

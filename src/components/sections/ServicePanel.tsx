@@ -8,31 +8,38 @@ export const ServicePanel: React.FC = () => {
   const { servicePanel } = siteContent;
 
   const icons = [
-    // 01: Shield / Corrosion
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    // 01: Double Corrosion Defense (Shield)
+    <svg key="1" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
     </svg>,
-    // 02: Specification / Sliders / Standards
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <line x1="4" y1="21" x2="4" y2="14" />
-      <line x1="4" y1="10" x2="4" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="12" />
-      <line x1="12" y1="8" x2="12" y2="3" />
-      <line x1="20" y1="21" x2="20" y2="16" />
-      <line x1="20" y1="12" x2="20" y2="3" />
-      <line x1="1" y1="14" x2="7" y2="14" />
-      <line x1="9" y1="8" x2="15" y2="8" />
-      <line x1="17" y1="16" x2="23" y2="16" />
+    // 02: Higher Bond Strength (Gauge / Strength)
+    <svg key="2" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 2v4" />
+      <path d="m4.93 4.93 2.83 2.83" />
+      <path d="M2 12h4" />
+      <path d="m4.93 19.07 2.83-2.83" />
+      <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" />
+      <path d="m14 10-4 4" />
     </svg>,
-    // 03: Practical Coordination / Message / Arrow loop
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    // 03: Controlled Zinc Bath (Thermometer / Heat)
+    <svg key="3" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
     </svg>,
-    // 04: Industrial Material / Layers
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <polygon points="12 2 2 7 12 12 22 7 12 2" />
-      <polyline points="2 17 12 22 22 17" />
-      <polyline points="2 12 12 17 22 12" />
+    // 04: Centrifuge Excess Removal & Quench (Rotation / Spin)
+    <svg key="4" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+    </svg>,
+    // 05: Inspection & Packing (Clipboard Check / Box)
+    <svg key="5" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M9 11l3 3L22 4" />
+      <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+    </svg>,
+    // 06: In-House Lab Facility (Flask / Test Standards)
+    <svg key="6" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M10 2v7.31M14 2v7.31" />
+      <path d="M8.5 2h7" />
+      <path d="M14 9.3 19 19a2 2 0 0 1-1.74 3H6.74A2 2 0 0 1 5 19l5-9.7" />
+      <path d="M7 16h10" />
     </svg>
   ];
 
@@ -137,6 +144,55 @@ export const ServicePanel: React.FC = () => {
                     >
                       {feature.description}
                     </p>
+
+                    {/* Bullet Points for standards if present */}
+                    {feature.bulletPoints && feature.bulletPoints.length > 0 && (
+                      <ul
+                        style={{
+                          marginTop: '0.75rem',
+                          paddingLeft: '0',
+                          listStyle: 'none',
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(2, 1fr)',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        {feature.bulletPoints.map((bullet, bIdx) => {
+                          const isFullWidth = bullet.toLowerCase().includes('customer requirement') || (feature.bulletPoints && feature.bulletPoints.length % 2 === 1 && bIdx === feature.bulletPoints.length - 1);
+                          return (
+                            <li
+                              key={bIdx}
+                              style={{
+                                gridColumn: isFullWidth ? '1 / -1' : 'auto',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                fontSize: 'var(--text-xs)',
+                                fontWeight: '700',
+                                color: 'var(--color-white)',
+                                backgroundColor: isFullWidth ? 'rgba(216, 243, 93, 0.12)' : 'rgba(216, 243, 93, 0.08)',
+                                border: '1px solid rgba(216, 243, 93, 0.2)',
+                                padding: '5px 10px',
+                                borderRadius: 'var(--radius-sm)',
+                                letterSpacing: '0.04em'
+                              }}
+                            >
+                              <span
+                                style={{
+                                  width: '6px',
+                                  height: '6px',
+                                  borderRadius: '50%',
+                                  backgroundColor: 'var(--color-lime)',
+                                  boxShadow: '0 0 6px var(--color-lime)',
+                                  flexShrink: 0
+                                }}
+                              />
+                              <span>{bullet}</span>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    )}
                   </div>
 
                   <div
