@@ -36,7 +36,7 @@
   --color-whatsapp-dark: #1EBE5D;
 
   /* Typography */
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-sans: 'Calibri', 'Carlito', 'Segoe UI', Candara, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
   --font-brand-logo: 'Samarkan', var(--font-sans);
 
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);

@@ -50,7 +50,7 @@ export const TrustStrip: React.FC = () => {
                   />
                   <span
                     style={{
-                      fontSize: 'var(--text-sm)',
+                      fontSize: 'var(--text-lg)',
                       fontWeight: '800',
                       color: 'var(--color-ink)',
                       letterSpacing: '-0.01em'
@@ -62,7 +62,7 @@ export const TrustStrip: React.FC = () => {
                 {item.sublabel && (
                   <span
                     style={{
-                      fontSize: 'var(--text-xs)',
+                      fontSize: 'var(--text-md)',
                       color: 'var(--color-muted)',
                       paddingLeft: '16px'
                     }}

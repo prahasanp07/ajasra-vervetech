@@ -70,7 +70,7 @@ export const siteContent = {
 
   trustStrip: [
     { label: "Double Protection", sublabel: "Cathodic sacrificial & barrier defense" },
-    { label: "~3600 PSI Strength", sublabel: "High metallurgical bond adhesion" },
+    { label: "Higher Bond Strength", sublabel: "High metallurgical bond adhesion" },
     { label: "Up to 480°C Bath", sublabel: "Electrically heated molten zinc furnace" },
     { label: "Harohalli, Karnataka", sublabel: "IS-2629 aligned operations" }
   ] as TrustIndicator[],
@@ -181,9 +181,9 @@ export const siteContent = {
       {
         id: "inspection-packing",
         number: "05",
-        title: "Inspection & packing",
+        title: "Inspection & Packing",
         description:
-          "Visual inspection for coating uniformity followed by pneumatic and mechanical handling for packing."
+          "Fettling process to carry-out imperfection on the HDG surface and Visual inspection."
       },
       {
         id: "inhouse-lab",

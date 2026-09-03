@@ -25,30 +25,38 @@ export const Hero: React.FC = () => {
               marginBottom: 'clamp(2.5rem, 5vw, 3.5rem)'
             }}
           >
-            {/* Eyebrow */}
-            <div className="eyebrow-badge">
-              <span className="eyebrow-dot" aria-hidden="true" />
-              {hero.eyebrow}
-            </div>
-
-            {/* Main Headline */}
+            {/* Main Headline (H1: Precision Hot Dip Galvanizing) */}
             <h1
               style={{
-                fontSize: 'var(--text-5xl)',
-                fontWeight: '800',
+                fontSize: 'var(--text-4xl)',
+                fontWeight: '600',
                 lineHeight: '1.08',
                 letterSpacing: '-0.035em',
                 color: 'var(--color-ink)',
-                marginBottom: '1.25rem'
+                marginBottom: '1rem',
+                textTransform: 'uppercase'
+              }}
+            >
+              {hero.eyebrow}
+            </h1>
+
+            {/* Sub-headline / Tagline */}
+            <div
+              style={{
+                fontSize: 'var(--text-xl)',
+                fontWeight: '700',
+                color: 'var(--color-deep-teal)',
+                letterSpacing: '-0.015em',
+                marginBottom: '1rem'
               }}
             >
               {hero.headline}
-            </h1>
+            </div>
 
-            {/* Subheadline */}
+            {/* Subheadline description */}
             <p
               style={{
-                fontSize: 'var(--text-lg)',
+                fontSize: 'var(--text-base)',
                 color: 'var(--color-muted)',
                 lineHeight: '1.6',
                 maxWidth: '680px',

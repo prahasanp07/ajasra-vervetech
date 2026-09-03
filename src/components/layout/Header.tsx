@@ -40,7 +40,9 @@ export const Header: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: 'var(--header-height)'
+            height: 'var(--header-height)',
+            paddingLeft: 'clamp(0.5rem, 4vw, 0.5rem)',
+            paddingRight: 'clamp(0.5rem, 4vw, 0.5rem)'
           }}
         >
           {/* Logo */}
@@ -54,23 +56,16 @@ export const Header: React.FC = () => {
             }}
             aria-label="Ajasra Vervetech Home"
           >
-            <div
+            <img
+              src="/images/ajasra-logo.png"
+              alt="Ajasra Vervetech Logo"
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '8px',
-                backgroundColor: 'var(--color-deep-teal)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--color-lime)'
+                width: '42px',
+                height: '42px',
+                objectFit: 'contain',
+                borderRadius: '6px'
               }}
-            >
-              <svg width="22" height="22" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                <path d="M12 36L24 12L36 36H29.5L24 24.5L18.5 36H12Z" fill="#D8F35D" />
-                <circle cx="24" cy="18" r="3" fill="#FFFFFF" />
-              </svg>
-            </div>
+            />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span
                 className="font-brand-logo"
@@ -82,18 +77,21 @@ export const Header: React.FC = () => {
                   lineHeight: '1.05'
                 }}
               >
-                AJASRA
+                AJASRA VERVETECH
               </span>
               <span
                 style={{
-                  fontSize: '0.65rem',
-                  fontWeight: '700',
-                  letterSpacing: '0.14em',
-                  textTransform: 'uppercase',
-                  color: 'var(--color-muted)'
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '0.6875rem',
+                  fontWeight: '600',
+                  fontStyle: 'italic',
+                  letterSpacing: '0.02em',
+                  color: 'var(--color-muted)',
+                  lineHeight: '1.2',
+                  textAlign: 'right'
                 }}
               >
-                VERVETECH
+                Born to Inspire
               </span>
             </div>
           </Link>
