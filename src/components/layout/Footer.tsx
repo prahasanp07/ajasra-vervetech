@@ -150,7 +150,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Col 3: Services & Capabilities */}
-          <div>
+          {/* <div>
             <h4
               style={{
                 fontSize: 'var(--text-xs)',
@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           {/* Col 4: Plant Location & Direct Contact */}
           <div>
@@ -281,11 +281,14 @@ export const Footer: React.FC = () => {
           }}
         >
           <div>
-            © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved. {siteConfig.businessType}.
+            © {new Date().getFullYear()} {siteConfig.businessName}. All rights reserved.
+          </div>
+          <div>
+            <span>Designed by <a href='https://pragana-innovations-six.vercel.app' style={{ color: 'var(--color-lime)' }}> PraGana Innovations </a></span>
           </div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <span>Harohalli Industrial Area, Karnataka</span>
-            <span>IS 2629 Aligned</span>
+            {/* <span>IS 2629 Aligned</span> */}
           </div>
         </div>
       </div>

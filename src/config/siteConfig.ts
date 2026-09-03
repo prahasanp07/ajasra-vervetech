@@ -4,7 +4,7 @@ export const siteConfig = {
   whatsappNumber: "918296663245",
   phoneDisplay: "+91 82966 63245",
   phoneTel: "+918296663245",
-  email: "support@ajasravervetech.com",
+  email: "info@ajasravervetech.com",
   emailEndpoint: "/api/send-email.php",
   establishedYear: "2020",
   businessType: "Family-owned partnership firm",
