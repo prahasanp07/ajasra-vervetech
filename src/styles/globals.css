@@ -1,5 +1,19 @@
 @import './tokens.css';
 
+/* Samarkan Brand Display Font */
+@font-face {
+  font-family: 'Samarkan';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Samarkan'), url('https://fonts.cdnfonts.com/s/5790/SAMARN__.woff') format('woff');
+}
+
+.font-brand-logo {
+  font-family: var(--font-brand-logo);
+  letter-spacing: 0.04em;
+}
+
 /* CSS Reset & Base */
 *,
 *::before,

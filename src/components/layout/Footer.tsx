@@ -44,9 +44,30 @@ export const Footer: React.FC = () => {
                   <circle cx="24" cy="18" r="3" fill="#FFFFFF" />
                 </svg>
               </div>
-              <span style={{ fontSize: '1.25rem', fontWeight: '800', letterSpacing: '-0.02em', color: 'var(--color-white)' }}>
-                AJASRA VERVETECH
-              </span>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
+                <span
+                  className="font-brand-logo"
+                  style={{
+                    fontSize: '1.55rem',
+                    color: 'var(--color-white)',
+                    letterSpacing: '0.04em',
+                    lineHeight: '1'
+                  }}
+                >
+                  AJASRA
+                </span>
+                <span
+                  style={{
+                    fontSize: '0.8125rem',
+                    fontWeight: '800',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--color-lime)'
+                  }}
+                >
+                  VERVETECH
+                </span>
+              </div>
             </div>
             <p
               style={{

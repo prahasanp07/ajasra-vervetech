@@ -130,65 +130,70 @@ export const Hero: React.FC = () => {
               }}
             />
 
-            {/* Top-Left Metric Badge */}
+            {/* Top-Left Metric Badge (Pill style matching Capabilities) */}
             <div
+              className="hero-top-badge"
               style={{
                 position: 'absolute',
-                top: 'clamp(1rem, 3vw, 1.75rem)',
-                left: 'clamp(1rem, 3vw, 1.75rem)',
+                top: 'clamp(0.75rem, 2.5vw, 1.5rem)',
+                left: 'clamp(0.75rem, 2.5vw, 1.5rem)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
                 backgroundColor: 'rgba(11, 23, 36, 0.85)',
                 backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: 'var(--radius-md)',
-                padding: '0.75rem 1.15rem',
-                color: 'var(--color-white)',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
+                WebkitBackdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
+                padding: 'clamp(4px, 1vw, 6px) clamp(10px, 1.5vw, 14px)',
+                borderRadius: 'var(--radius-full)',
+                fontSize: 'var(--text-xs)',
+                fontWeight: '700',
+                color: 'var(--color-lime)',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                zIndex: 2
               }}
             >
-              <div
+              <span
                 style={{
-                  width: '10px',
-                  height: '10px',
+                  width: '7px',
+                  height: '7px',
                   borderRadius: '50%',
                   backgroundColor: 'var(--color-lime)',
-                  boxShadow: '0 0 10px var(--color-lime)'
+                  boxShadow: '0 0 8px var(--color-lime)',
+                  flexShrink: 0
                 }}
               />
-              <div>
-                <div style={{ fontSize: 'var(--text-xs)', fontWeight: '700', letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--color-lime)' }}>
-                  Hot Dip Bath Active
-                </div>
-                <div style={{ fontSize: 'var(--text-sm)', fontWeight: '700', color: 'var(--color-white)' }}>
-                  450°C Pure Molten Zinc
-                </div>
-              </div>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+                <span>Hot Dip Bath Active</span>
+                <span className="hero-zinc-temp" style={{ color: 'var(--color-white)', fontWeight: 500, textTransform: 'none', letterSpacing: '0' }}>
+                  • 460°C Molten Zinc
+                </span>
+              </span>
             </div>
 
             {/* Bottom Location & Standard Info Strip */}
             <div
+              className="hero-bottom-bar"
               style={{
                 position: 'absolute',
-                bottom: 'clamp(1rem, 3vw, 1.75rem)',
-                right: 'clamp(1rem, 3vw, 1.75rem)',
-                left: 'clamp(1rem, 3vw, 1.75rem)',
+                bottom: 0,
+                left: 0,
+                right: 0,
                 display: 'flex',
                 flexWrap: 'wrap',
                 alignItems: 'center',
                 justifyContent: 'space-between',
-                gap: '1rem',
-                backgroundColor: 'rgba(11, 23, 36, 0.85)',
-                backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255, 255, 255, 0.15)',
-                borderRadius: 'var(--radius-md)',
-                padding: '0.85rem 1.25rem',
-                color: 'var(--color-white)'
+                gap: '0.5rem',
+                padding: 'clamp(0.6rem, 2vw, 1rem) clamp(0.85rem, 2.5vw, 1.5rem)',
+                background: 'linear-gradient(180deg, transparent 0%, rgba(11, 23, 36, 0.75) 30%, rgba(11, 23, 36, 0.94) 100%)',
+                color: 'var(--color-white)',
+                zIndex: 2
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <span style={{ color: 'var(--color-lime)' }}>📍</span>
-                <span style={{ fontSize: 'var(--text-sm)', fontWeight: '600' }}>
+                <span style={{ color: 'var(--color-lime)', fontSize: '0.95rem' }}>📍</span>
+                <span style={{ fontSize: 'var(--text-sm)', fontWeight: '600', color: 'rgba(255, 255, 255, 0.95)' }}>
                   {hero.locationBadge}
                 </span>
               </div>
@@ -200,9 +205,12 @@ export const Hero: React.FC = () => {
                   textTransform: 'uppercase',
                   color: 'var(--color-lime)',
                   backgroundColor: 'rgba(216, 243, 93, 0.12)',
-                  padding: '4px 10px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid rgba(216, 243, 93, 0.25)'
+                  padding: '3px 10px',
+                  borderRadius: 'var(--radius-full)',
+                  border: '1px solid rgba(216, 243, 93, 0.25)',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  whiteSpace: 'nowrap'
                 }}
               >
                 IS 2629 Standard Quality
@@ -211,6 +219,22 @@ export const Hero: React.FC = () => {
           </div>
         </Reveal>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .hero-top-badge {
+            font-size: 0.68rem !important;
+            padding: 4px 9px !important;
+          }
+          .hero-bottom-bar {
+            padding: 0.5rem 0.75rem !important;
+            gap: 0.25rem !important;
+          }
+          .hero-bottom-bar span {
+            font-size: 0.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 };

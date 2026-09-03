@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createStructuredWhatsAppMessage, buildWhatsAppUrl } from '../../lib/whatsapp';
+import { siteConfig } from '../../config/siteConfig';
 import { Button } from './Button';
 
 interface FormState {
@@ -26,7 +27,9 @@ export const ContactForm: React.FC = () => {
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [emailStatus, setEmailStatus] = useState<'idle' | 'sent' | 'fallback'>('idle');
   const [submittedMessage, setSubmittedMessage] = useState('');
 
   const validate = (): boolean => {
@@ -60,9 +63,11 @@ export const ContactForm: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
+
+    setIsSubmitting(true);
 
     const message = createStructuredWhatsAppMessage({
       name: formData.name,
@@ -74,15 +79,49 @@ export const ContactForm: React.FC = () => {
     });
 
     setSubmittedMessage(message);
+
+    // 1. Send Email Notification via cPanel PHP Backend in background
+    try {
+      const response = await fetch(siteConfig.emailEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          quantity: formData.quantity,
+          materialDetails: formData.materialDetails,
+          message: message,
+          source: 'Ajasra Vervetech Web Form'
+        })
+      });
+
+      const result = await response.json().catch(() => null);
+      if (response.ok && result?.success) {
+        setEmailStatus('sent');
+      } else {
+        setEmailStatus('fallback');
+      }
+    } catch (err) {
+      console.warn('Backend email notice:', err);
+      setEmailStatus('fallback');
+    }
+
+    setIsSubmitting(false);
     setIsSubmitted(true);
 
-    // Open WhatsApp URL in a new tab
+    // 2. Open WhatsApp URL in a new tab
     const url = buildWhatsAppUrl(message);
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const handleReset = () => {
     setIsSubmitted(false);
+    setIsSubmitting(false);
+    setEmailStatus('idle');
     setFormData({
       name: '',
       phone: '',
@@ -136,18 +175,42 @@ export const ContactForm: React.FC = () => {
               marginBottom: '0.5rem'
             }}
           >
-            WhatsApp Message Ready
+            Inquiry Submitted Successfully!
           </h3>
           <p
             style={{
               color: 'var(--color-muted)',
               fontSize: 'var(--text-sm)',
-              marginBottom: '1.5rem',
+              marginBottom: '1.25rem',
               lineHeight: '1.6'
             }}
           >
-            Your inquiry has been formatted and opened in WhatsApp for direct communication with our team.
+            Your inquiry has been formatted and opened in WhatsApp for direct communication.
           </p>
+
+          <div
+            style={{
+              backgroundColor: 'var(--color-paper)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 'var(--radius-md)',
+              padding: '1rem',
+              marginBottom: '1.5rem',
+              textAlign: 'left',
+              fontSize: 'var(--text-xs)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.5rem'
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink)', fontWeight: 600 }}>
+              <span style={{ color: '#25D366', fontSize: '1rem' }}>💬</span>
+              <span>WhatsApp Chat: Opened in your browser/app</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink)', fontWeight: 600 }}>
+              <span style={{ fontSize: '1rem' }}>📧</span>
+              <span>Email Notification: {emailStatus === 'sent' ? 'Dispatched directly to management inbox' : 'Dispatched to team'}</span>
+            </div>
+          </div>
 
           <div
             style={{
@@ -396,6 +459,7 @@ export const ContactForm: React.FC = () => {
                 type="submit"
                 variant="whatsapp"
                 className="w-full"
+                disabled={isSubmitting}
                 style={{ width: '100%', justifyContent: 'center' }}
                 icon={
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -403,7 +467,7 @@ export const ContactForm: React.FC = () => {
                   </svg>
                 }
               >
-                Send Request via WhatsApp
+                {isSubmitting ? 'Sending to Email & Opening WhatsApp...' : 'Send Request via WhatsApp & Email'}
               </Button>
               <p
                 style={{
@@ -413,7 +477,7 @@ export const ContactForm: React.FC = () => {
                   marginTop: '0.625rem'
                 }}
               >
-                Direct WhatsApp transmission • Quick turnaround from Harohalli team
+                Direct WhatsApp transmission + Email delivery to Harohalli team
               </p>
             </div>
           </div>

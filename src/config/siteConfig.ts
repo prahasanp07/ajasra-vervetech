@@ -5,6 +5,7 @@ export const siteConfig = {
   phoneDisplay: "+91 82966 63245",
   phoneTel: "+918296663245",
   email: "support@ajasravervetech.com",
+  emailEndpoint: "/api/send-email.php",
   establishedYear: "2020",
   businessType: "Family-owned partnership firm",
   promoters: ["Mrs. Kalpana Sreedar", "Mr. K. Sreedar"],

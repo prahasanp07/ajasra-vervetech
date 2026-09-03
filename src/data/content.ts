@@ -59,8 +59,8 @@ export const siteContent = {
     eyebrow: "PRECISION HOT DIP GALVANIZING",
     headline: "Protecting steel for what comes next.",
     subheadline:
-      "Specification-led hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 650°C providing double cathodic and barrier protection with ~3600 psi coating strength in accordance with IS-2629.",
-    locationBadge: "Serving industrial projects from Harohalli, Karnataka.",
+      "Specification led hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 480°C providing double cathodic and barrier protection as per IS-2629.",
+    locationBadge: "Serving energy sectors and engineering products.",
     primaryCta: "Start a project",
     secondaryCta: "Explore our process",
     heroImage: "/images/galvanizing-hero.jpg",
@@ -70,7 +70,7 @@ export const siteContent = {
   trustStrip: [
     { label: "Double Protection", sublabel: "Cathodic sacrificial & barrier defense" },
     { label: "~3600 PSI Strength", sublabel: "High metallurgical bond adhesion" },
-    { label: "Up to 650°C Bath", sublabel: "Electrically heated molten zinc furnace" },
+    { label: "Up to 480°C Bath", sublabel: "Electrically heated molten zinc furnace" },
     { label: "Harohalli, Karnataka", sublabel: "IS-2629 aligned operations" }
   ] as TrustIndicator[],
 

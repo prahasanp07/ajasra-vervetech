@@ -73,19 +73,20 @@ export const Header: React.FC = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <span
+                className="font-brand-logo"
                 style={{
-                  fontSize: '1.125rem',
-                  fontWeight: '800',
+                  fontSize: '1.35rem',
+                  fontWeight: '400',
                   color: 'var(--color-ink)',
-                  letterSpacing: '-0.02em',
-                  lineHeight: '1.1'
+                  letterSpacing: '0.04em',
+                  lineHeight: '1.05'
                 }}
               >
                 AJASRA
               </span>
               <span
                 style={{
-                  fontSize: '0.6875rem',
+                  fontSize: '0.65rem',
                   fontWeight: '700',
                   letterSpacing: '0.14em',
                   textTransform: 'uppercase',

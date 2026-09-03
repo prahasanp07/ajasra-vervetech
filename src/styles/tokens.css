@@ -3,7 +3,7 @@
   --color-ink: #0B1724;
   --color-ink-light: #182838;
   --color-ink-dark: #050B12;
-  
+
   --color-deep-teal: #0D3A3D;
   --color-deep-teal-dark: #072528;
   --color-deep-teal-surface: #124448;
@@ -37,7 +37,8 @@
 
   /* Typography */
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  
+  --font-brand-logo: 'Samarkan', var(--font-sans);
+
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
   --text-sm: clamp(0.875rem, 0.84rem + 0.2vw, 0.9375rem);
   --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem);
