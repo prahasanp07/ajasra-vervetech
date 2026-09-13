@@ -218,41 +218,139 @@ export const ServicePanel: React.FC = () => {
             ))}
           </div>
 
-          {/* Bottom Action to Deep-Dive Process Page */}
+          {/* Continuous 12-Stage Plant Flow Strip */}
           <div
             style={{
-              marginTop: 'clamp(2rem, 4vw, 3rem)',
+              marginTop: 'clamp(2.25rem, 4vw, 3.25rem)',
               paddingTop: '2rem',
-              borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-              display: 'flex',
-              flexWrap: 'wrap',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              gap: '1.25rem'
+              borderTop: '1px solid rgba(255, 255, 255, 0.12)'
             }}
           >
-            <div>
-              <div style={{ fontSize: 'var(--text-base)', fontWeight: '700', color: 'var(--color-white)' }}>
-                Detailed 3-Stage Process & 4-Point Quality Inspection
+            <div style={{ marginBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
+                <span
+                  style={{
+                    fontSize: '0.6875rem',
+                    fontWeight: '800',
+                    color: 'var(--color-lime)',
+                    backgroundColor: 'rgba(216, 243, 93, 0.15)',
+                    padding: '2px 8px',
+                    borderRadius: 'var(--radius-xs)',
+                    letterSpacing: '0.08em',
+                    textTransform: 'uppercase'
+                  }}
+                >
+                  Continuous 12-Stage Sequence
+                </span>
+                <span style={{ fontSize: 'var(--text-xs)', color: 'rgba(255, 255, 255, 0.5)' }}>
+                  IS-2629 Plant Architecture
+                </span>
               </div>
-              <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255, 255, 255, 0.7)', marginTop: '2px' }}>
-                Caustic degreasing, acid pickling, fluxing, up to 650°C zinc bath, centrifuge, and quench cooling.
-              </div>
+              {/* <div style={{ fontSize: 'var(--text-base)', fontWeight: '700', color: 'var(--color-white)' }}>
+                Physical Multi-Tank Galvanizing & Centrifuge Line
+              </div> */}
             </div>
 
-            <Button
-              variant="lime"
-              size="md"
-              href="/services"
-              icon={
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              }
+            {/* Horizontal Mini Tank Flow Badges */}
+            {/* <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                overflowX: 'auto',
+                paddingBottom: '0.75rem',
+                scrollbarWidth: 'none',
+                WebkitOverflowScrolling: 'touch'
+              }}
             >
-              Explore Full Process Breakdown
-            </Button>
+              {[
+                { n: '01', name: 'Degreasing', color: '#9ec5e8' },
+                { n: '02', name: 'Rinsing', color: '#4592df' },
+                { n: '03', name: 'Pickling I', color: '#ef4444' },
+                { n: '04', name: 'Pickling II', color: '#ef4444' },
+                { n: '05', name: 'Rinse I', color: '#4592df' },
+                { n: '06', name: 'Rinse II', color: '#4592df' },
+                { n: '07', name: 'Hot Fluxing', color: '#dfa373' },
+                { n: '08', name: '120°C Drying', color: '#eedecb' },
+                { n: '09', name: '480°C Zinc Kettle', color: '#e9a367' },
+                { n: '10', name: 'Spinning (Centrifuge)', color: '#d48843' },
+                { n: '11', name: 'Quench Cooling', color: '#4592df' },
+                { n: '12', name: 'Passivation', color: '#dfa373' }
+              ].map((stage, idx, arr) => (
+                <React.Fragment key={stage.n}>
+                  <div
+                    style={{
+                      flexShrink: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                      backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      padding: '5px 10px',
+                      borderRadius: 'var(--radius-sm)',
+                      fontSize: '0.6875rem',
+                      fontWeight: '700',
+                      color: '#FFFFFF',
+                      whiteSpace: 'nowrap'
+                    }}
+                  >
+                    <span
+                      style={{
+                        width: '8px',
+                        height: '8px',
+                        borderRadius: '2px',
+                        backgroundColor: stage.color
+                      }}
+                    />
+                    <span style={{ color: 'var(--color-lime)', opacity: 0.9 }}>{stage.n}.</span>
+                    <span>{stage.name}</span>
+                  </div>
+                  {idx < arr.length - 1 && (
+                    <span style={{ color: 'rgba(255, 255, 255, 0.3)', fontSize: '10px', flexShrink: 0 }}>→</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </div> */}
+
+            {/* Bottom Action CTA */}
+            <div
+              style={{
+                marginTop: '1.5rem',
+                display: 'flex',
+                flexWrap: 'wrap',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '1.25rem'
+              }}
+            >
+              <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255, 255, 255, 0.7)', maxWidth: '640px' }}>
+                Each stage maintains strict bath temperature, chemical immersion parameters, and centrifuge dwell times to achieve ~3600 psi metallurgical bonding as per IS-2629.
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <Button
+                  variant="lime"
+                  size="md"
+                  href="#process-flow"
+                  icon={
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 5v14" />
+                      <path d="m19 12-7 7-7-7" />
+                    </svg>
+                  }
+                >
+                  Interactive Process Diagram
+                </Button>
+
+                <Button
+                  variant="outline-white"
+                  size="md"
+                  href="/services#process"
+                >
+                  Full Technical Specs
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

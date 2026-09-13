@@ -92,7 +92,7 @@ export const FeatureSplit: React.FC = () => {
                 </div>
                 <div style={{ color: 'var(--color-white)', fontSize: 'var(--text-xs)' }}>
                   <span style={{ fontWeight: '700', color: 'var(--color-lime)' }}>Harohalli Facility: </span>
-                  Overhead crane staging and designated dipping bays.
+                  {featureSplit.imageAlt}
                 </div>
               </div>
             </div>

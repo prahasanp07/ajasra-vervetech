@@ -76,7 +76,7 @@ export const Footer: React.FC = () => {
                 marginBottom: '1.5rem'
               }}
             >
-              Precision hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 650°C providing double cathodic and barrier protection with ~3600 psi coating strength.
+              Precision hot dip galvanizing for iron, steel and ferrous alloys. Operating temperatures up to 480°C providing double cathodic and barrier protection with ~3600 psi coating strength.
             </p>
             <div
               style={{

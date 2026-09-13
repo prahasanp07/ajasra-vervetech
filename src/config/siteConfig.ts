@@ -11,7 +11,7 @@ export const siteConfig = {
   promoters: ["Mrs. Kalpana Sreedar", "Mr. K. Sreedar"],
   standards: "IS 2629 Aligned",
   coatingStrength: "3600 psi",
-  maxBathTemp: "650°C",
+  maxBathTemp: "480°C",
   location: "Harohalli Industrial Area, Kanakapura, Karnataka",
   address: [
     "Plot No. 274-D/B, Road No. 5A",
@@ -25,7 +25,7 @@ export const siteConfig = {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
-    { label: "Capabilities", href: "/#capabilities" },
+    { label: "Certifications", href: "/#certifications" },
     { label: "Applications", href: "/#applications" },
     { label: "Contact", href: "/#contact" }
   ]

@@ -3,6 +3,8 @@ import { siteConfig } from '../config/siteConfig';
 import { siteContent } from '../data/content';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
+import { Capabilities } from '../components/sections/Capabilities';
+import { InfrastructureSection } from '../components/sections/InfrastructureSection';
 import { createQuickStartWhatsAppUrl } from '../lib/whatsapp';
 
 export const AboutPage: React.FC = () => {
@@ -388,6 +390,12 @@ export const AboutPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Statutory Approvals & Certificates Received */}
+      <Capabilities />
+
+      {/* Authentic Plant & Facility Infrastructure */}
+      <InfrastructureSection variant="paper" />
+
       {/* 7 Industries We Cater Grid */}
       <section className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
         <Reveal>
@@ -448,7 +456,7 @@ export const AboutPage: React.FC = () => {
                         borderRadius: 'var(--radius-sm)'
                       }}
                     >
-                      0{index + 1}
+                      {item.index}
                     </span>
                   </div>
                   <p

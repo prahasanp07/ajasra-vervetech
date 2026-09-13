@@ -2,6 +2,8 @@ import React from 'react';
 import { Hero } from '../components/sections/Hero';
 import { TrustStrip } from '../components/sections/TrustStrip';
 import { ServicePanel } from '../components/sections/ServicePanel';
+import { ProcessFlowSection } from '../components/sections/ProcessFlowSection';
+import { InfrastructureSection } from '../components/sections/InfrastructureSection';
 import { Capabilities } from '../components/sections/Capabilities';
 import { FeatureSplit } from '../components/sections/FeatureSplit';
 import { Applications } from '../components/sections/Applications';
@@ -20,6 +22,12 @@ export const HomePage: React.FC = () => {
 
       {/* Signature Dark Teal Featured Service Panel */}
       <ServicePanel />
+
+      {/* Interactive 12-Stage Plant Process Flow Diagram */}
+      <ProcessFlowSection />
+
+      {/* Authentic Plant & Facility Infrastructure */}
+      <InfrastructureSection variant="paper" />
 
       {/* Capabilities Image-Cards Grid */}
       <Capabilities />

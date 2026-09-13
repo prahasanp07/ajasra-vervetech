@@ -3,6 +3,9 @@ import { siteConfig } from '../config/siteConfig';
 import { siteContent } from '../data/content';
 import { Button } from '../components/ui/Button';
 import { Reveal } from '../components/ui/Reveal';
+import { GalvanizingProcessDiagram } from '../components/diagrams/GalvanizingProcessDiagram';
+import { InfrastructureSection } from '../components/sections/InfrastructureSection';
+import { SectorComponentsSection } from '../components/sections/SectorComponentsSection';
 import { createQuickStartWhatsAppUrl } from '../lib/whatsapp';
 
 export const ServicesPage: React.FC = () => {
@@ -10,7 +13,7 @@ export const ServicesPage: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { detailedProcess } = siteContent;
+  const { processFlowTanks } = siteContent;
 
   return (
     <div className="services-page" style={{ paddingTop: 'clamp(2rem, 4vw, 3.5rem)', paddingBottom: 'clamp(4rem, 6vw, 6rem)' }}>
@@ -102,7 +105,7 @@ export const ServicesPage: React.FC = () => {
                 Furnace Temperature
               </div>
               <div style={{ fontSize: 'var(--text-3xl)', fontWeight: '800', color: 'var(--color-ink)' }}>
-                Up to 650°C
+                Up to 480°C
               </div>
               <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', lineHeight: '1.5' }}>
                 Electrically heated zinc melting furnace ensuring homogeneous bath chemistry and wetting.
@@ -166,7 +169,7 @@ export const ServicesPage: React.FC = () => {
                     marginBottom: '1.5rem'
                   }}
                 >
-                  We provide the service of hot dip galvanization to iron, steel and ferrous alloys to provide them with resistance to abrasion, environmental impacts, and wear. Hot dip galvanization is a corrosion protection process that involves coating steel by immersing it in a bath of molten Zinc at a high operating temperature of a maximum of 650°C.
+                  We provide the service of hot dip galvanization to iron, steel and ferrous alloys to provide them with resistance to abrasion, environmental impacts, and wear. Hot dip galvanization is a corrosion protection process that involves coating steel by immersing it in a bath of molten Zinc at an operating temperature up to 480°C.
                 </p>
                 <p
                   style={{
@@ -184,177 +187,452 @@ export const ServicesPage: React.FC = () => {
         </div>
       </section>
 
-      {/* HOW WE DO IT - 3 Fundamental Steps Section */}
+      {/* PLANT & FACILITY INFRASTRUCTURE (As per authentic specifications) */}
+      <InfrastructureSection variant="paper" />
+
+      {/* HOW WE DO IT - 12-Stage Plant Flow & Process Architecture */}
       <section id="process" className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
         <Reveal>
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto clamp(2.5rem, 4vw, 3.5rem)' }}>
+          <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(2rem, 4vw, 3rem)' }}>
             <div className="eyebrow-badge">
               <span className="eyebrow-dot" aria-hidden="true" />
-              HOW WE DO IT
+              12-STAGE PLANT PROCESS ARCHITECTURE
             </div>
             <h2 className="section-headline">
-              The 3 Fundamental Steps in Our Galvanizing Process
+              The 12-Stage Hot Dip Galvanizing Sequence
             </h2>
             <p className="section-subtext" style={{ margin: '0.875rem auto 0' }}>
-              Precision chemical preparation, thermal dipping with centrifuge excess removal, and rigorous four-point quality inspection.
+              Precision chemical surface preparation, thermal flux drying, molten zinc immersion at 480°C, centrifugal excess removal, and passivation—aligned with IS-2629 specifications.
             </p>
           </div>
         </Reveal>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 4vw, 3.5rem)' }}>
-          {detailedProcess.map((step) => (
-            <Reveal key={step.step}>
-              <div
-                style={{
-                  backgroundColor: 'var(--color-white)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 'var(--radius-xl)',
-                  padding: 'clamp(1.75rem, 4vw, 2.75rem)',
-                  boxShadow: 'var(--shadow-card)'
-                }}
-              >
-                {/* Step Header */}
-                <div
-                  style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    gap: '1rem',
-                    paddingBottom: '1.25rem',
-                    borderBottom: '1px solid var(--color-border-subtle)',
-                    marginBottom: '1.75rem'
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                    <span
-                      style={{
-                        fontSize: 'var(--text-xl)',
-                        fontWeight: '800',
-                        color: 'var(--color-lime)',
-                        backgroundColor: 'var(--color-deep-teal)',
-                        width: '48px',
-                        height: '48px',
-                        borderRadius: 'var(--radius-md)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0
-                      }}
-                    >
-                      {step.step}
-                    </span>
-                    <div>
-                      <h3
-                        style={{
-                          fontSize: 'var(--text-xl)',
-                          fontWeight: '800',
-                          color: 'var(--color-ink)',
-                          letterSpacing: '-0.02em'
-                        }}
-                      >
-                        {step.title}
-                      </h3>
-                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', fontWeight: '600' }}>
-                        {step.subtitle}
-                      </p>
-                    </div>
-                  </div>
+        {/* 12-Stage Isometric Process Diagram Component */}
+        <Reveal delay={80}>
+          <div style={{ marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
+            <GalvanizingProcessDiagram
+              variant="card"
+              showDetailsCard={true}
+              interactive={true}
+              title="Hot Dip Galvanizing Process Flow"
+              subtitle="Physical 12-Stage Bath & Centrifuge Sequence at Ajasra Vervetech (Harohalli)"
+            />
+          </div>
+        </Reveal>
 
+        {/* Categorized Phase-by-Phase Technical Engineering Breakdown */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 4vw, 3rem)' }}>
+          {/* Phase 1: Chemical Pretreatment */}
+          <Reveal delay={100}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-white)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+                boxShadow: 'var(--shadow-card)'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                   <span
                     style={{
-                      fontSize: 'var(--text-xs)',
-                      fontWeight: '700',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.08em',
-                      color: 'var(--color-copper)',
-                      backgroundColor: 'rgba(200, 117, 73, 0.1)',
-                      padding: '4px 12px',
-                      borderRadius: 'var(--radius-full)'
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-md)',
+                      backgroundColor: 'var(--color-deep-teal)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '800',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 'var(--text-base)'
                     }}
                   >
-                    Step {step.step} of 03
+                    01
                   </span>
+                  <div>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: '800', color: 'var(--color-ink)', margin: 0 }}>
+                      Phase 1: Chemical Surface Pretreatment
+                    </h3>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', fontWeight: '600', marginTop: '2px' }}>
+                      Tanks 01 to 06 • Eliminating Organic Contaminants, Mill Scale & Residual Acid
+                    </div>
+                  </div>
                 </div>
 
-                <p
-                  style={{
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--color-ink-light)',
-                    lineHeight: '1.65',
-                    marginBottom: '1.75rem'
-                  }}
-                >
-                  {step.description}
-                </p>
+                <span style={{ fontSize: 'var(--text-xs)', fontWeight: '700', color: 'var(--color-deep-teal)', backgroundColor: 'rgba(13, 58, 61, 0.08)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
+                  Tanks 1 – 6
+                </span>
+              </div>
 
-                {/* Substeps Grid */}
-                {step.substeps && (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                {processFlowTanks.slice(0, 6).map((tank) => (
                   <div
+                    key={tank.id}
                     style={{
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                      gap: '1.25rem'
+                      backgroundColor: 'var(--color-paper-subtle)',
+                      border: '1px solid var(--color-border-subtle)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
                     }}
                   >
-                    {step.substeps.map((sub, i) => (
-                      <div
-                        key={sub.name}
-                        style={{
-                          backgroundColor: 'var(--color-paper-subtle)',
-                          border: '1px solid var(--color-border-subtle)',
-                          borderRadius: 'var(--radius-md)',
-                          padding: '1.25rem',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'space-between'
-                        }}
-                      >
-                        <div>
-                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.5rem' }}>
-                            <h4
-                              style={{
-                                fontSize: 'var(--text-sm)',
-                                fontWeight: '800',
-                                color: 'var(--color-ink)'
-                              }}
-                            >
-                              {i + 1}. {sub.name}
-                            </h4>
-                            {sub.duration && (
-                              <span
-                                style={{
-                                  fontSize: '0.6875rem',
-                                  fontWeight: '700',
-                                  color: 'var(--color-deep-teal)',
-                                  backgroundColor: 'rgba(13, 58, 61, 0.1)',
-                                  padding: '2px 8px',
-                                  borderRadius: 'var(--radius-sm)'
-                                }}
-                              >
-                                {sub.duration}
-                              </span>
-                            )}
-                          </div>
-                          <p
-                            style={{
-                              fontSize: 'var(--text-xs)',
-                              color: 'var(--color-muted)',
-                              lineHeight: '1.6'
-                            }}
-                          >
-                            {sub.details}
-                          </p>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ width: '10px', height: '10px', borderRadius: '2px', backgroundColor: tank.tankColor }} />
+                          <span style={{ fontSize: 'var(--text-xs)', fontWeight: '800', color: 'var(--color-ink)' }}>
+                            Stage {tank.stepNumber.toString().padStart(2, '0')}: {tank.name}
+                          </span>
                         </div>
+                        <span style={{ fontSize: '0.6875rem', fontWeight: '700', color: 'var(--color-muted)' }}>
+                          {tank.dwellTime}
+                        </span>
                       </div>
-                    ))}
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', lineHeight: '1.55', margin: '0 0 10px' }}>
+                        {tank.details}
+                      </p>
+                    </div>
+                    <div style={{ borderTop: '1px solid var(--color-border-subtle)', paddingTop: '6px', fontSize: '0.6875rem', color: 'var(--color-ink-light)', fontWeight: '600' }}>
+                      ⚡ {tank.chemistry}
+                    </div>
                   </div>
-                )}
+                ))}
               </div>
-            </Reveal>
-          ))}
+            </div>
+          </Reveal>
+
+          {/* Phase 2: Flux Conditioning & Drying */}
+          <Reveal delay={120}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-white)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+                boxShadow: 'var(--shadow-card)'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-md)',
+                      backgroundColor: 'var(--color-deep-teal)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '800',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 'var(--text-base)'
+                    }}
+                  >
+                    02
+                  </span>
+                  <div>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: '800', color: 'var(--color-ink)', margin: 0 }}>
+                      Phase 2: Hot Fluxing & Thermal Preheating
+                    </h3>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', fontWeight: '600', marginTop: '2px' }}>
+                      Tanks 07 & 08 • Oxidation Shielding & Moisture Elimination Before Molten Immersion
+                    </div>
+                  </div>
+                </div>
+
+                <span style={{ fontSize: 'var(--text-xs)', fontWeight: '700', color: 'var(--color-copper)', backgroundColor: 'rgba(200, 117, 73, 0.1)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
+                  Stages 7 – 8
+                </span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+                {processFlowTanks.slice(6, 8).map((tank) => (
+                  <div
+                    key={tank.id}
+                    style={{
+                      backgroundColor: 'var(--color-paper-subtle)',
+                      border: '1px solid var(--color-border-subtle)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ width: '10px', height: '10px', borderRadius: '2px', backgroundColor: tank.tankColor }} />
+                          <span style={{ fontSize: 'var(--text-sm)', fontWeight: '800', color: 'var(--color-ink)' }}>
+                            Stage {tank.stepNumber.toString().padStart(2, '0')}: {tank.name}
+                          </span>
+                        </div>
+                        <span style={{ fontSize: 'var(--text-xs)', fontWeight: '800', color: 'var(--color-copper)' }}>
+                          {tank.temperature}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', lineHeight: '1.6', margin: '0 0 10px' }}>
+                        {tank.details}
+                      </p>
+                    </div>
+                    <div style={{ borderTop: '1px solid var(--color-border-subtle)', paddingTop: '8px', fontSize: 'var(--text-xs)', color: 'var(--color-ink-light)', fontWeight: '600' }}>
+                      🎯 <strong>Purpose:</strong> {tank.purpose}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Phase 3: Hot Dip Galvanizing & Centrifugal Spinning */}
+          <Reveal delay={140}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-ink)',
+                color: 'var(--color-white)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+                boxShadow: 'var(--shadow-xl)',
+                border: '1px solid rgba(255, 255, 255, 0.12)'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1rem', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-md)',
+                      backgroundColor: 'rgba(216, 243, 93, 0.15)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '800',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 'var(--text-base)',
+                      border: '1px solid rgba(216, 243, 93, 0.3)'
+                    }}
+                  >
+                    03
+                  </span>
+                  <div>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: '800', color: 'var(--color-white)', margin: 0 }}>
+                      Phase 3: High-Temp Zinc Immersion & Centrifuge Excess Removal
+                    </h3>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'rgba(255, 255, 255, 0.7)', fontWeight: '600', marginTop: '2px' }}>
+                      Stages 09 & 10 • Metallurgical Bond (~3600 PSI) & Clean-Thread Centrifugal Finishing
+                    </div>
+                  </div>
+                </div>
+
+                <span style={{ fontSize: 'var(--text-xs)', fontWeight: '800', color: 'var(--color-lime)', backgroundColor: 'rgba(216, 243, 93, 0.15)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
+                  Core Galvanizing Reaction
+                </span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.25rem' }}>
+                {processFlowTanks.slice(8, 10).map((tank) => (
+                  <div
+                    key={tank.id}
+                    style={{
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                      border: '1px solid rgba(255, 255, 255, 0.12)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                          <span style={{ width: '10px', height: '10px', borderRadius: '2px', backgroundColor: tank.tankColor }} />
+                          <span style={{ fontSize: 'var(--text-base)', fontWeight: '800', color: 'var(--color-white)' }}>
+                            Stage {tank.stepNumber.toString().padStart(2, '0')}: {tank.name}
+                          </span>
+                        </div>
+                        <span style={{ fontSize: 'var(--text-xs)', fontWeight: '800', color: 'var(--color-lime)' }}>
+                          {tank.temperature}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'rgba(255, 255, 255, 0.8)', lineHeight: '1.6', margin: '0 0 10px' }}>
+                        {tank.details}
+                      </p>
+                    </div>
+                    <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '8px', fontSize: 'var(--text-xs)', color: 'var(--color-lime)' }}>
+                      ✓ {tank.purpose}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Phase 4: Quench Cooling & Passivation */}
+          <Reveal delay={160}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-white)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.5rem)',
+                boxShadow: 'var(--shadow-card)'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem', paddingBottom: '1rem', borderBottom: '1px solid var(--color-border-subtle)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                  <span
+                    style={{
+                      width: '40px',
+                      height: '40px',
+                      borderRadius: 'var(--radius-md)',
+                      backgroundColor: 'var(--color-deep-teal)',
+                      color: 'var(--color-lime)',
+                      fontWeight: '800',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontSize: 'var(--text-base)'
+                    }}
+                  >
+                    04
+                  </span>
+                  <div>
+                    <h3 style={{ fontSize: 'var(--text-xl)', fontWeight: '800', color: 'var(--color-ink)', margin: 0 }}>
+                      Phase 4: Quench Cooling & Passivation Coating
+                    </h3>
+                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', fontWeight: '600', marginTop: '2px' }}>
+                      Tanks 11 & 12 • Reaction Arrest & Wet Storage White Rust Defense
+                    </div>
+                  </div>
+                </div>
+
+                <span style={{ fontSize: 'var(--text-xs)', fontWeight: '700', color: 'var(--color-whatsapp-dark)', backgroundColor: 'rgba(37, 211, 102, 0.1)', padding: '4px 12px', borderRadius: 'var(--radius-full)' }}>
+                  Stages 11 – 12
+                </span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+                {processFlowTanks.slice(10, 12).map((tank) => (
+                  <div
+                    key={tank.id}
+                    style={{
+                      backgroundColor: 'var(--color-paper-subtle)',
+                      border: '1px solid var(--color-border-subtle)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: '1.25rem',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                          <span style={{ width: '10px', height: '10px', borderRadius: '2px', backgroundColor: tank.tankColor }} />
+                          <span style={{ fontSize: 'var(--text-sm)', fontWeight: '800', color: 'var(--color-ink)' }}>
+                            Stage {tank.stepNumber.toString().padStart(2, '0')}: {tank.name}
+                          </span>
+                        </div>
+                        <span style={{ fontSize: '0.6875rem', fontWeight: '700', color: 'var(--color-muted)' }}>
+                          {tank.dwellTime}
+                        </span>
+                      </div>
+                      <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', lineHeight: '1.6', margin: '0 0 10px' }}>
+                        {tank.details}
+                      </p>
+                    </div>
+                    <div style={{ borderTop: '1px solid var(--color-border-subtle)', paddingTop: '8px', fontSize: 'var(--text-xs)', color: 'var(--color-ink-light)', fontWeight: '600' }}>
+                      🛡️ <strong>Protection:</strong> {tank.purpose}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Phase 5: 4-Point Quality Inspection & Lab Standards */}
+          <Reveal delay={180}>
+            <div
+              style={{
+                backgroundColor: 'var(--color-paper-subtle)',
+                border: '1px solid var(--color-border)',
+                borderRadius: 'var(--radius-xl)',
+                padding: 'clamp(1.5rem, 3.5vw, 2.5rem)'
+              }}
+            >
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem' }}>
+                <div>
+                  <div className="eyebrow-badge">
+                    <span className="eyebrow-dot" aria-hidden="true" />
+                    QUALITY ASSURANCE & STANDARDS
+                  </div>
+                  <h3 style={{ fontSize: 'var(--text-2xl)', fontWeight: '800', color: 'var(--color-ink)', margin: '4px 0 0' }}>
+                    4-Point Quality Inspection & Standard Compliance
+                  </h3>
+                </div>
+
+                <span style={{ fontSize: 'var(--text-xs)', fontWeight: '800', color: 'var(--color-deep-teal)', backgroundColor: 'var(--color-white)', border: '1px solid var(--color-border)', padding: '6px 14px', borderRadius: 'var(--radius-full)' }}>
+                  In-House Lab Tested
+                </span>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
+                {[
+                  {
+                    title: 'Coating Thickness',
+                    spec: 'IS-2629 / IS-3203',
+                    desc: 'Calibrated electromagnetic thickness gauge checks verifying micron coating specifications across high-wear zones.'
+                  },
+                  {
+                    title: 'Bond Adhesion',
+                    spec: '~3600 PSI Bond',
+                    desc: 'Evaluates the intermetallic solid-state reaction to guarantee coating will never chip, flake, or peel during transit or service.'
+                  },
+                  {
+                    title: 'Coating Uniformity',
+                    spec: 'IS-2633 (Preece Test)',
+                    desc: 'Verifies continuous unbroken zinc coverage across internal cavities, structural gussets, corners, and fastener recesses.'
+                  },
+                  {
+                    title: 'Visual Spangle & Fettling',
+                    spec: 'IS-6745 / Visual Inspection',
+                    desc: 'Fettling to eliminate zinc spikes and ash marks, confirming smooth metallic spangle finish ready for immediate erection.'
+                  }
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    style={{
+                      backgroundColor: 'var(--color-white)',
+                      border: '1px solid var(--color-border-subtle)',
+                      borderRadius: 'var(--radius-md)',
+                      padding: '1.25rem'
+                    }}
+                  >
+                    <div style={{ fontSize: '0.6875rem', fontWeight: '800', color: 'var(--color-copper)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+                      {item.spec}
+                    </div>
+                    <h4 style={{ fontSize: 'var(--text-base)', fontWeight: '800', color: 'var(--color-ink)', margin: '4px 0 6px' }}>
+                      {item.title}
+                    </h4>
+                    <p style={{ fontSize: 'var(--text-xs)', color: 'var(--color-muted)', lineHeight: '1.55', margin: 0 }}>
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
+
+      {/* SECTOR DELIVERABLES & REAL COMPONENTS (Slides 8 to 12: Energy, Construction, Metro, General Engineering) */}
+      <SectorComponentsSection variant="paper" />
 
       {/* Environmental & Facility Infrastructure Details */}
       <section className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
