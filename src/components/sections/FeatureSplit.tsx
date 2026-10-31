@@ -43,6 +43,7 @@ export const FeatureSplit: React.FC = () => {
                 src={featureSplit.image}
                 alt={featureSplit.imageAlt}
                 loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   height: '100%',

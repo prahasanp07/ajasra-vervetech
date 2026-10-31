@@ -167,7 +167,7 @@ export const siteContent = {
     locationBadge: "Serving energy sectors and engineering products.",
     primaryCta: "Start a project",
     secondaryCta: "Explore our process",
-    heroImage: "/images/ajasra-interior-1.png",
+    heroImage: "/images/ajasra-interior-1.webp",
     heroAlt: "Hot dip galvanizing facility with fabricated steel structure being immersed into zinc kettle"
   },
 
@@ -364,21 +364,21 @@ export const siteContent = {
     },
     images: [
       {
-        src: "/images/ajasra-interior-2.png",
+        src: "/images/ajasra-interior-2.webp",
         alt: "5000 sft industrial shed with 1000 sft mezzanine floor, in-house laboratory, and dedicated storage",
         title: "5,000 sft Shed & 1,000 sft Mezzanine",
         subtitle: "High-bay industrial facility with mezzanine supervisor floor, in-house laboratory, and organized stores.",
         badge: "Plant Floor & Mezzanine"
       },
       {
-        src: "/images/ajasra-interior-1.png",
+        src: "/images/ajasra-interior-1.webp",
         alt: "2400 MT/annum hot dip galvanizing equipment line, wet scrubber exhaust ducting, and monorail handling",
         title: "2,400 MT/Annum Galvanizing Line",
         subtitle: "Full continuous tank line with overhead crane monorail, zinc kettle, and wet scrubber fume extraction.",
         badge: "Galvanizing Tank Line"
       },
       {
-        src: "/images/ajasra-interior-3.png",
+        src: "/images/ajasra-interior-3.webp",
         alt: "100 KVA electrical HT power transformer substation yard with safety fencing at Harohalli facility",
         title: "100 KVA Dedicated Electrical HT Power",
         subtitle: "Dedicated transformer yard ensuring uninterrupted power to the molten zinc furnace and utilities.",
@@ -695,7 +695,7 @@ export const siteContent = {
         validity: "Valid until 13.06.2027 (Initial: 14.06.2021)",
         scope: "Provision of Hot Dip Galvanizing Process",
         description: "Accredited quality management system for precision hot dip galvanizing of ferrous products conforming to international ISO standards.",
-        image: "/images/certifications/ajasra-cert-1.png",
+        image: "/images/certifications/ajasra-cert-1.webp",
         alt: "TÜV NORD ISO 9001:2015 Quality Certificate for Ajasra Vervetech"
       },
       {
@@ -708,7 +708,7 @@ export const siteContent = {
         validity: "Issued: 01-Feb-2023 (3 Years Validity)",
         scope: "Sustainable Manufacturing & Environmental Conformance",
         description: "Awarded under the MSME Sustainable (ZED) Certification Scheme demonstrating defect-free production and minimal environmental impact.",
-        image: "/images/certifications/ajasra-cert-3.png",
+        image: "/images/certifications/ajasra-cert-3.webp",
         alt: "MSME ZED Bronze Sustainable Certification Certificate"
       },
       {
@@ -721,7 +721,7 @@ export const siteContent = {
         validity: "Incorporated / Active from October 2020",
         scope: "Form GST REG-06 & Income Tax Permanent Account Number",
         description: "Statutory goods & service tax registration (LVO 155 - Ramanagara) and corporate PAN for seamless industrial invoicing and contracting.",
-        image: "/images/certifications/ajasra-gst-pan.png",
+        image: "/images/certifications/ajasra-gst-pan.webp",
         alt: "Form GST REG-06 and PAN Card Certificate for Ajasra Vervetech"
       },
       {
@@ -734,7 +734,7 @@ export const siteContent = {
         validity: "Registered on 06-Oct-2020",
         scope: "Section 58(1) of Indian Partnership Act, 1932",
         description: "Acknowledged and registered partnership firm under the Indian Partnership Act, 1932 for industrial manufacturing and galvanizing operations.",
-        image: "/images/certifications/ajasra-registration-1.png",
+        image: "/images/certifications/ajasra-registration-1.webp",
         alt: "Certificate of Registration of Firm from Registrar of Firms Ramanagara"
       },
       {
@@ -747,7 +747,7 @@ export const siteContent = {
         validity: "Registered on 28-Oct-2020",
         scope: "Manufacturing Enterprise - NIC 32909 (Other Articles)",
         description: "Official Government of India MSME enterprise registration certifying manufacturing operations at Plot 274-D/B, Harohalli Industrial Area.",
-        image: "/images/certifications/ajasra-udyam.png",
+        image: "/images/certifications/ajasra-udyam.webp",
         alt: "Government of India Udyam Registration Certificate"
       }
     ] as StatutoryCertificate[]
@@ -764,7 +764,7 @@ export const siteContent = {
         title: "ISO 9001:2015 Quality Management",
         description:
           "TÜV NORD / TÜV INDIA audited and certified quality management system accredited by NABCB & IAF for Hot Dip Galvanizing processes (Reg: QM 08 01944).",
-        image: "/images/certifications/ajasra-cert-1.png",
+        image: "/images/certifications/ajasra-cert-1.webp",
         alt: "TÜV NORD ISO 9001:2015 Certificate"
       },
       {
@@ -773,7 +773,7 @@ export const siteContent = {
         title: "Zero Defect Zero Effect (ZED)",
         description:
           "Awarded by Ministry of MSME, Govt. of India under Sustainable ZED Certification Scheme for defect-free and environmentally responsible manufacturing.",
-        image: "/images/certifications/ajasra-cert-3.png",
+        image: "/images/certifications/ajasra-cert-3.webp",
         alt: "MSME ZED Bronze Certificate"
       },
       {
@@ -782,7 +782,7 @@ export const siteContent = {
         title: "GSTIN & Income Tax PAN",
         description:
           "Form GST REG-06 (29ABSFA8302N1ZS) from Commercial Taxes Karnataka and PAN (ABSFA8302N) from Income Tax Department, Government of India.",
-        image: "/images/certifications/ajasra-gst-pan.png",
+        image: "/images/certifications/ajasra-gst-pan.webp",
         alt: "GST Registration Certificate and PAN Card"
       },
       {
@@ -791,7 +791,7 @@ export const siteContent = {
         title: "Govt. of Karnataka Firm Registration",
         description:
           "Registered under Section 58(1) of Indian Partnership Act, 1932 by Office of the Registrar of Firms, Ramanagara (Firm No: RMG-F16-2020-21).",
-        image: "/images/certifications/ajasra-registration-1.png",
+        image: "/images/certifications/ajasra-registration-1.webp",
         alt: "Registrar of Firms Form C Certificate"
       },
       {
@@ -800,7 +800,7 @@ export const siteContent = {
         title: "Govt. of India Udyam MSME",
         description:
           "Certified Manufacturing Micro Enterprise under Ministry of MSME (UDYAM-KR-29-0000665) at Plot 274-D/B, Harohalli Industrial Area Phase 2.",
-        image: "/images/certifications/ajasra-udyam.png",
+        image: "/images/certifications/ajasra-udyam.webp",
         alt: "Udyam Registration Certificate"
       }
     ] as CapabilityCard[]
@@ -811,7 +811,7 @@ export const siteContent = {
     heading: "The right finish starts with the right conversation.",
     description:
       "We begin by understanding your material, dimensions, quantity, handling requirements, and project context. That helps create a smoother path from incoming steel to finished protection.",
-    image: "/images/ajasra-front-1.png",
+    image: "/images/ajasra-front-1.webp",
     imageAlt: "Ajasra Vervetech organized steel material handling and overhead crane facility",
     pillars: [
       {
@@ -847,7 +847,7 @@ export const siteContent = {
         title: "Energy",
         description:
           "As an alternate source of energy, solar cells are more prone to external elements of rust, dust and decay. Galvanization helps in utilizing all of the energy provided by the solar cells.",
-        image: "/images/infrastructure-steel.jpg",
+        image: "/images/infrastructure-steel.webp",
         alt: "Solar mounting purlins and renewable energy steel structures"
       },
       {
@@ -856,7 +856,7 @@ export const siteContent = {
         title: "General Engineering",
         description:
           "Engines, machines and structures wear out from time to time. It is advisable to keep them protected through galvanizing.",
-        image: "/images/steel-fabrication.jpg",
+        image: "/images/steel-fabrication.webp",
         alt: "Galvanized machinery, frames, and engineered steel assemblies"
       },
       {
@@ -865,7 +865,7 @@ export const siteContent = {
         title: "Agricultural Equipments",
         description:
           "Farming equipment, irrigation systems, grain systems are open to the atmosphere and in desperate need of prevention of rust.",
-        image: "/images/infrastructure-steel.jpg",
+        image: "/images/infrastructure-steel.webp",
         alt: "Galvanized agricultural structures and irrigation pipe components"
       },
       {
@@ -874,7 +874,7 @@ export const siteContent = {
         title: "Construction",
         description:
           "Street furniture, building frameworks, steel frames, balconies, verandahs, staircases, ladders and walkways are susceptible to oxygen and need to be coated with a layer of galvanized steel to make them more durable and safer.",
-        image: "/images/structural-steel.jpg",
+        image: "/images/structural-steel.webp",
         alt: "Galvanized structural steel frameworks and building frames"
       },
       {
@@ -883,7 +883,7 @@ export const siteContent = {
         title: "Hardwares",
         description:
           "We undertake galvanizing services for Pole line hardware, nuts and bolts, washers, hinges brackets, and other essential tools and equipment, fasteners, among others.",
-        image: "/images/zinc-kettle-dip.jpg",
+        image: "/images/zinc-kettle-dip.webp",
         alt: "Centrifuge hot dip galvanized pole line hardware and fasteners"
       },
       {
@@ -892,7 +892,7 @@ export const siteContent = {
         title: "Automotive",
         description:
           "Skeletal body of the vehicles, Bumpers and Reinforcements, Door Beams and Seatings, Chassis and Frames are vulnerable to rust and need to be galvanized periodically.",
-        image: "/images/facility-logistics.jpg",
+        image: "/images/facility-logistics.webp",
         alt: "Automotive chassis, brackets, and tubular frame galvanizing"
       },
       {
@@ -901,7 +901,7 @@ export const siteContent = {
         title: "Shipping",
         description:
           "Gear and ring locks, boat trailers, connecting rods, anchor lifting shackle are liable to corrosion. Help prevent and protect them through our galvanizing services.",
-        image: "/images/galvanizing-hero.jpg",
+        image: "/images/galvanizing-hero.webp",
         alt: "Marine hardware, boat trailers, and anchor lifting shackles"
       }
     ] as IndustryItem[]
@@ -963,7 +963,7 @@ export const siteContent = {
         tag: 'Transmission Line',
         slideNumber: 8,
         description: 'High-voltage porcelain and composite insulator string ball & socket pin fittings with uniform sacrificial zinc coating preventing galvanic pitting.',
-        image: '/images/components/energy-insulator-hardware.png',
+        image: '/images/components/energy-insulator-hardware.webp',
         alt: 'Galvanized ball and socket insulator pins and caps for energy transmission lines',
         specHighlights: ['Uniform zinc coating', 'Precision pin fitment', 'High-tensile forged steel']
       },
@@ -975,7 +975,7 @@ export const siteContent = {
         tag: 'Tower Hardware',
         slideNumber: 8,
         description: 'Heavy-duty drop-forged socket eyes, clevis eyes, and Y-clevis connectors for transmission tower cross-arms and earth-wire suspension.',
-        image: '/images/components/energy-socket-clevis-eyes.jpg',
+        image: '/images/components/energy-socket-clevis-eyes.webp',
         alt: 'Galvanized socket eyes, clevis eyes and Y-clevis fittings for electrical towers',
         specHighlights: ['Drop forged steel', 'Centrifuge spin finishing', 'IS-2629 compliant']
       },
@@ -987,7 +987,7 @@ export const siteContent = {
         tag: 'Substation Fitting',
         slideNumber: 8,
         description: 'Precision dual-eye forged tension link designed for high mechanical load rating in outdoor substation switchyards and distribution gantries.',
-        image: '/images/components/energy-forged-clevis-link.jpg',
+        image: '/images/components/energy-forged-clevis-link.webp',
         alt: 'Galvanized forged clevis link for electrical substations',
         specHighlights: ['Heavy mechanical loading', 'Smooth metallic finish', 'Salt-fog resistant']
       },
@@ -999,7 +999,7 @@ export const siteContent = {
         tag: 'Switchgear & Power',
         slideNumber: 8,
         description: 'Fabricated heavy-gauge steel connector bracket with slotted mounting apertures for outdoor distribution transformers and electrical busbars.',
-        image: '/images/components/energy-transformer-bracket.jpg',
+        image: '/images/components/energy-transformer-bracket.webp',
         alt: 'Galvanized transformer and electrical switchgear mounting bracket',
         specHighlights: ['Heavy plate gauge', 'Slotted tolerance holes', 'Complete interior hole coating']
       },
@@ -1013,7 +1013,7 @@ export const siteContent = {
         tag: 'Formwork & Rigging',
         slideNumber: 9,
         description: 'Forged scaffolding hook clamps and formwork locking connectors with smooth zinc finishes ensuring reliable on-site mechanical locking.',
-        image: '/images/components/construction-formwork-clamps.png',
+        image: '/images/components/construction-formwork-clamps.webp',
         alt: 'Galvanized scaffolding and formwork hook clamps',
         specHighlights: ['High impact resistance', 'Reusable on-site', 'Smooth anti-galling finish']
       },
@@ -1025,7 +1025,7 @@ export const siteContent = {
         tag: 'Structural Framing',
         slideNumber: 9,
         description: 'Heavy folded steel saddle clamp with serrated gripping teeth for secure slip-resistant structural member attachment without on-site welding.',
-        image: '/images/components/construction-beam-saddle-clamp.jpg',
+        image: '/images/components/construction-beam-saddle-clamp.webp',
         alt: 'Galvanized serrated structural beam channel saddle clamp',
         specHighlights: ['Serrated grip edges', 'Pre-punched bolt slots', 'Zero on-site welding']
       },
@@ -1037,7 +1037,7 @@ export const siteContent = {
         tag: 'PEB & Facades',
         slideNumber: 9,
         description: 'Pre-engineered building (PEB) purlin cleat with curved adjustment slots allowing thermal expansion and precise alignment of roof and wall framing.',
-        image: '/images/components/construction-purlin-cleat-bracket.jpg',
+        image: '/images/components/construction-purlin-cleat-bracket.webp',
         alt: 'Galvanized purlin cleat and facade adjustment bracket',
         specHighlights: ['Thermal expansion slots', 'PEB structural fitment', 'Edge-to-edge zinc barrier']
       },
@@ -1051,7 +1051,7 @@ export const siteContent = {
         tag: 'Tunnel Cabling',
         slideNumber: 11,
         description: 'Curved structural vertical spine with 4-tier welded cantilever arms designed for supporting high-voltage traction power and signaling cables along curved metro tunnel walls.',
-        image: '/images/components/metro-cable-tray-cantilever-rack.jpg',
+        image: '/images/components/metro-cable-tray-cantilever-rack.webp',
         alt: 'Galvanized multi-tier curved metro tunnel cable tray cantilever support rack',
         specHighlights: ['Curved tunnel profile match', 'Heavy cantilever welds', 'Subterranean humidity resistant']
       },
@@ -1063,7 +1063,7 @@ export const siteContent = {
         tag: 'Track Infrastructure',
         slideNumber: 11,
         description: 'Heavy steel channel brackets with end mounting flanges and pre-slotted fixing holes for trackside signaling, electrical conduits, and walkway gratings.',
-        image: '/images/components/metro-tunnel-signaling-beams.jpg',
+        image: '/images/components/metro-tunnel-signaling-beams.webp',
         alt: 'Galvanized trackside signaling beams and cable brackets for metro rail',
         specHighlights: ['Multiple length tiers', 'Continuous dip coating', 'High vibration tolerance']
       },
@@ -1075,7 +1075,7 @@ export const siteContent = {
         tag: 'Underground Transit',
         slideNumber: 11,
         description: 'Radius-formed backing plate welded to an angle cantilever arm, conforming precisely to the curvature of precast concrete tunnel segments.',
-        image: '/images/components/metro-curved-tunnel-bracket.jpg',
+        image: '/images/components/metro-curved-tunnel-bracket.webp',
         alt: 'Galvanized radius curved tunnel lining wall support bracket',
         specHighlights: ['Precast lining radius fit', 'Slotted anchor bolt holes', 'Double cathodic protection']
       },
@@ -1087,7 +1087,7 @@ export const siteContent = {
         tag: 'Substation & Station',
         slideNumber: 11,
         description: 'Straight vertical mounting bracket featuring three tiered cantilever support arms for electrical equipment rooms, station shafts, and viaduct cable routing.',
-        image: '/images/components/metro-vertical-cable-rack.jpg',
+        image: '/images/components/metro-vertical-cable-rack.webp',
         alt: 'Galvanized 3-tier vertical cable support rack for metro transit',
         specHighlights: ['Straight shaft installation', 'Turned-up cable retention lips', '100% zinc weld coverage']
       },
@@ -1101,7 +1101,7 @@ export const siteContent = {
         tag: 'Heavy Steelwork',
         slideNumber: 10,
         description: 'Thick-plate structural column base plates with precision bored anchor bolt openings and folded structural apex brackets, hot dip galvanized with uniform zinc flow.',
-        image: '/images/components/engineering-base-gusset-plates.png',
+        image: '/images/components/engineering-base-gusset-plates.webp',
         alt: 'Galvanized heavy base plates and stamped structural ridge brackets',
         specHighlights: ['Thick plate galvanizing', 'Unclogged precision holes', 'High load-bearing capacity']
       },
@@ -1113,7 +1113,7 @@ export const siteContent = {
         tag: 'Enclosures & Frames',
         slideNumber: 10,
         description: 'Complete welded perimeter enclosure frame with inner angle reinforcements, mounting flanges, and perforated step brackets for heavy machinery housing.',
-        image: '/images/components/engineering-panel-framing-assembly.png',
+        image: '/images/components/engineering-panel-framing-assembly.webp',
         alt: 'Galvanized welded panel frame assembly for industrial machinery',
         specHighlights: ['Complex welded assembly', 'Vented hollow sections', 'Smooth spangle appearance']
       },
@@ -1125,7 +1125,7 @@ export const siteContent = {
         tag: 'Industrial Ducting',
         slideNumber: 10,
         description: 'Heavy triangular cantilever bracket arms alongside smooth-radius conical transition duct chutes for industrial ventilation and bulk material handling.',
-        image: '/images/components/engineering-cantilever-arms-duct.png',
+        image: '/images/components/engineering-cantilever-arms-duct.webp',
         alt: 'Galvanized triangular cantilever arms and transition chute ducting',
         specHighlights: ['Triangular truss strength', 'Formed curved sheet coating', 'Abrasion resistant']
       },
@@ -1137,7 +1137,7 @@ export const siteContent = {
         tag: 'Equipment Mounts',
         slideNumber: 12,
         description: 'Channel section base welded to dual vertical clevis plates and gusset stiffeners with large pin bores for heavy industrial equipment mounting.',
-        image: '/images/components/engineering-channel-beam-bracket.jpg',
+        image: '/images/components/engineering-channel-beam-bracket.webp',
         alt: 'Galvanized heavy steel channel beam bracket with dual clevis plates',
         specHighlights: ['Heavy dual clevis ears', 'Thick structural channel', 'Clean pin bore tolerances']
       },
@@ -1149,7 +1149,7 @@ export const siteContent = {
         tag: 'Mounting Hardware',
         slideNumber: 12,
         description: 'Assortment of slotted tie bars, Z-brackets, pipe U-clamps, and spacer plates finished in centrifuge hot dip galvanizing for burr-free threads and slots.',
-        image: '/images/components/engineering-clamping-straps-brackets.jpg',
+        image: '/images/components/engineering-clamping-straps-brackets.webp',
         alt: 'Galvanized structural clamping straps, Z-brackets, and mounting clips',
         specHighlights: ['Centrifuge spin cleaned', 'Multiple bracket geometries', 'Thread clearance preserved']
       },
@@ -1161,7 +1161,7 @@ export const siteContent = {
         tag: 'Utility Grounding',
         slideNumber: 12,
         description: 'Extended steel tie rods with welded helical earth auger blades and forged eye heads for utility pole guying, solar field foundations, and civil earth retention.',
-        image: '/images/components/engineering-helical-earth-anchors.jpg',
+        image: '/images/components/engineering-helical-earth-anchors.webp',
         alt: 'Galvanized helical earth anchor screw rods with forged eye heads',
         specHighlights: ['Helical auger blade coating', 'Sub-soil corrosion resistance', 'Forged eye tensile integrity']
       },
@@ -1173,7 +1173,7 @@ export const siteContent = {
         tag: 'Custom Brackets',
         slideNumber: 12,
         description: 'Heavy stamped angled bracket strap with multi-position locking notches and bolt apertures for adjustable field installations.',
-        image: '/images/components/engineering-adjustable-mounting-strap.jpg',
+        image: '/images/components/engineering-adjustable-mounting-strap.webp',
         alt: 'Galvanized adjustable angled mounting strap bracket with locking notches',
         specHighlights: ['Multi-slot adjustment', 'Formed angle rigidity', 'Clean notch profiles']
       }
@@ -1186,7 +1186,7 @@ export const siteContent = {
       "Share the basics of your project and start a practical conversation with our team.",
     primaryCta: "Request a quote",
     whatsappCta: "Chat on WhatsApp",
-    backgroundImage: "/images/cta-banner-bg.jpg"
+    backgroundImage: "/images/cta-banner-bg.webp"
   },
 
   contact: {

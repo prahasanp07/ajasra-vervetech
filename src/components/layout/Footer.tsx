@@ -28,8 +28,11 @@ export const Footer: React.FC = () => {
           <div style={{ maxWidth: '340px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1.25rem' }}>
               <img
-                src="/images/ajasra-logo.png"
+                src="/images/ajasra-logo.webp"
                 alt="Ajasra Vervetech Logo"
+                width={800}
+                height={655}
+                decoding="async"
                 style={{
                   width: '46px',
                   height: '46px',
@@ -288,7 +291,6 @@ export const Footer: React.FC = () => {
           </div>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
             <span>Harohalli Industrial Area, Karnataka</span>
-            {/* <span>IS 2629 Aligned</span> */}
           </div>
         </div>
       </div>

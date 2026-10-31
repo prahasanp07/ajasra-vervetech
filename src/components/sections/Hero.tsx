@@ -119,6 +119,8 @@ export const Hero: React.FC = () => {
             <img
               src={hero.heroImage}
               alt={hero.heroAlt}
+              fetchPriority="high"
+              decoding="async"
               // @ts-expect-error fetchpriority is standard HTML5 attribute
               fetchpriority="high"
               style={{

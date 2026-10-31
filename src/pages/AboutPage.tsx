@@ -6,8 +6,15 @@ import { Reveal } from '../components/ui/Reveal';
 import { Capabilities } from '../components/sections/Capabilities';
 import { InfrastructureSection } from '../components/sections/InfrastructureSection';
 import { createQuickStartWhatsAppUrl } from '../lib/whatsapp';
+import { usePageMeta } from '../lib/usePageMeta';
 
 export const AboutPage: React.FC = () => {
+  usePageMeta(
+    'About Us',
+    'About Ajasra Vervetech, a family-owned hot dip galvanizing firm in Harohalli Industrial Area, Karnataka: promoters, vision, mission and infrastructure.',
+    '/about'
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

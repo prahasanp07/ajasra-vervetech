@@ -222,6 +222,7 @@ export const SectorComponentsSection: React.FC<SectorComponentsSectionProps> = (
                     src={item.image}
                     alt={item.alt}
                     loading="lazy"
+                    decoding="async"
                     className="component-card-img"
                     style={{
                       width: '100%',

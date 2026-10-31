@@ -57,8 +57,11 @@ export const Header: React.FC = () => {
             aria-label="Ajasra Vervetech Home"
           >
             <img
-              src="/images/ajasra-logo.png"
+              src="/images/ajasra-logo.webp"
               alt="Ajasra Vervetech Logo"
+              width={800}
+              height={655}
+              decoding="async"
               style={{
                 width: '42px',
                 height: '42px',

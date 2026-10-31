@@ -92,6 +92,7 @@ export const Capabilities: React.FC = () => {
                   src={item.image}
                   alt={item.alt}
                   loading="lazy"
+                  decoding="async"
                   className="image-card-img"
                   style={{
                     position: 'absolute',

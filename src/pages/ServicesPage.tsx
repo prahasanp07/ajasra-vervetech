@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { siteConfig } from '../config/siteConfig';
 import { siteContent } from '../data/content';
 import { Button } from '../components/ui/Button';
+import { usePageMeta } from '../lib/usePageMeta';
 import { Reveal } from '../components/ui/Reveal';
 import { GalvanizingProcessDiagram } from '../components/diagrams/GalvanizingProcessDiagram';
 import { InfrastructureSection } from '../components/sections/InfrastructureSection';
@@ -9,6 +10,12 @@ import { SectorComponentsSection } from '../components/sections/SectorComponents
 import { createQuickStartWhatsAppUrl } from '../lib/whatsapp';
 
 export const ServicesPage: React.FC = () => {
+  usePageMeta(
+    'Hot Dip Galvanizing Services',
+    'Hot dip galvanizing services for iron, steel and ferrous alloys at Ajasra Vervetech, Harohalli Industrial Area, Karnataka.',
+    '/services'
+  );
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

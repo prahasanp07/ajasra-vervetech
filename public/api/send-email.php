@@ -6,15 +6,9 @@
 
 // 1. Set Response Headers (JSON & CORS)
 header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Origin: *');
-header('Access-Control-Allow-Methods: POST, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, Accept');
-
-// Handle preflight OPTIONS request
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    http_response_code(200);
-    exit();
-}
+// Same-origin only: the site and this endpoint are served from the same domain,
+// so no CORS headers are emitted (cross-origin browsers are denied by default).
+header('X-Content-Type-Options: nosniff');
 
 // Only allow POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -37,8 +31,8 @@ if (!$data) {
 
 // 3. Extract & Sanitize Fields
 function clean_input($data) {
-    if (is_null($data)) return '';
-    $data = trim($data);
+    if (is_null($data) || !is_scalar($data)) return '';
+    $data = trim((string)$data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
     return $data;
@@ -52,6 +46,20 @@ $materialDetails = clean_input($data['materialDetails'] ?? ($data['material_deta
 $inquiryMessage  = clean_input($data['message'] ?? '');
 $botcheck        = $data['botcheck'] ?? false;
 
+// Raw, newline-free copies for use in mail headers (never HTML-escaped, never contain CR/LF)
+function header_safe($value) {
+    return trim(preg_replace('/[\x00-\x1F\x7F]+/', ' ', is_scalar($value) ? (string)$value : ''));
+}
+$rawName  = mb_substr(header_safe($data['name'] ?? ''), 0, 100);
+$rawEmail = header_safe($data['email'] ?? '');
+
+// Length limits to keep the mailer from being used as a bulk relay
+$name            = mb_substr($name, 0, 100);
+$phone           = mb_substr($phone, 0, 30);
+$email           = mb_substr($email, 0, 150);
+$quantity        = mb_substr($quantity, 0, 100);
+$materialDetails = mb_substr($materialDetails, 0, 3000);
+
 // Honeypot anti-spam verification
 if (!empty($botcheck)) {
     // Spam bot caught by honeypot
@@ -59,6 +67,25 @@ if (!empty($botcheck)) {
     echo json_encode(['success' => true, 'message' => 'Message filtered.']);
     exit();
 }
+
+// Basic per-IP rate limit: max 5 submissions per 10 minutes
+$rateDir  = sys_get_temp_dir();
+$rateFile = $rateDir . '/ajasra_rl_' . md5($_SERVER['REMOTE_ADDR'] ?? 'unknown') . '.json';
+$now      = time();
+$hits     = [];
+if (is_readable($rateFile)) {
+    $decoded = json_decode((string)@file_get_contents($rateFile), true);
+    if (is_array($decoded)) {
+        $hits = array_values(array_filter($decoded, function ($t) use ($now) { return is_int($t) && ($now - $t) < 600; }));
+    }
+}
+if (count($hits) >= 5) {
+    http_response_code(429);
+    echo json_encode(['success' => false, 'message' => 'Too many requests. Please try WhatsApp or try again later.']);
+    exit();
+}
+$hits[] = $now;
+@file_put_contents($rateFile, json_encode($hits), LOCK_EX);
 
 // 4. Validate Required Fields
 if (empty($name) || empty($phone) || empty($materialDetails)) {
@@ -72,7 +99,7 @@ if (empty($name) || empty($phone) || empty($materialDetails)) {
 
 // 5. Configure Email Parameters
 $toEmail = 'info@ajasravervetech.com'; // Primary recipient inbox
-$subject = "New Hot Dip Galvanizing Inquiry from " . preg_replace("/[\r\n]+/", " ", $name);
+$subject = "New Hot Dip Galvanizing Inquiry from " . $rawName;
 
 // Fallback formatted text if details exist
 $displayEmail    = !empty($email) ? $email : 'Not provided';
@@ -139,7 +166,7 @@ $htmlBody = <<<HTML
             </div>
         </div>
         <div class="footer">
-            Submitted on {$submissionTime} &bull; Origin: {$ipAddress} &bull; Harohalli Plant Portal
+            Submitted on {$submissionTime} &bull; Origin: {$ipAddress} &bull; Ajasra Vervetech Website
         </div>
     </div>
 </body>
@@ -152,8 +179,9 @@ $headers[] = 'MIME-Version: 1.0';
 $headers[] = 'Content-type: text/html; charset=UTF-8';
 $headers[] = 'From: Ajasra Web Portal <' . $toEmail . '>';
 
-if (!empty($email) && filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $headers[] = 'Reply-To: ' . $name . ' <' . $email . '>';
+if ($rawEmail !== '' && filter_var($rawEmail, FILTER_VALIDATE_EMAIL)) {
+    // Address only: no display name, so user input can never alter header structure
+    $headers[] = 'Reply-To: ' . $rawEmail;
 }
 
 $headers[] = 'X-Mailer: PHP/' . phpversion();

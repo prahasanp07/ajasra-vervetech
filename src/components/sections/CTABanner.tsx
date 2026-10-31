@@ -28,6 +28,7 @@ export const CTABanner: React.FC = () => {
               src={ctaBanner.backgroundImage}
               alt="Industrial plant background"
               loading="lazy"
+              decoding="async"
               style={{
                 position: 'absolute',
                 inset: 0,

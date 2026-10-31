@@ -31,6 +31,7 @@ export const ContactForm: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [emailStatus, setEmailStatus] = useState<'idle' | 'sent' | 'fallback'>('idle');
   const [submittedMessage, setSubmittedMessage] = useState('');
+  const [botcheck, setBotcheck] = useState('');
 
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
@@ -80,6 +81,10 @@ export const ContactForm: React.FC = () => {
 
     setSubmittedMessage(message);
 
+    // Open WhatsApp synchronously inside the click gesture. Opening it after an
+    // await is blocked as a popup by Safari / iOS and many mobile browsers.
+    window.open(buildWhatsAppUrl(message), '_blank', 'noopener,noreferrer');
+
     // 1. Send Email Notification via cPanel PHP Backend in background
     try {
       const response = await fetch(siteConfig.emailEndpoint, {
@@ -95,6 +100,7 @@ export const ContactForm: React.FC = () => {
           quantity: formData.quantity,
           materialDetails: formData.materialDetails,
           message: message,
+          botcheck,
           source: 'Ajasra Vervetech Web Form'
         })
       });
@@ -112,16 +118,13 @@ export const ContactForm: React.FC = () => {
 
     setIsSubmitting(false);
     setIsSubmitted(true);
-
-    // 2. Open WhatsApp URL in a new tab
-    const url = buildWhatsAppUrl(message);
-    window.open(url, '_blank', 'noopener,noreferrer');
   };
 
   const handleReset = () => {
     setIsSubmitted(false);
     setIsSubmitting(false);
     setEmailStatus('idle');
+    setBotcheck('');
     setFormData({
       name: '',
       phone: '',
@@ -175,7 +178,7 @@ export const ContactForm: React.FC = () => {
               marginBottom: '0.5rem'
             }}
           >
-            Inquiry Submitted Successfully!
+            {emailStatus === 'sent' ? 'Inquiry Submitted Successfully!' : 'Continue Your Inquiry on WhatsApp'}
           </h3>
           <p
             style={{
@@ -185,7 +188,9 @@ export const ContactForm: React.FC = () => {
               lineHeight: '1.6'
             }}
           >
-            Your inquiry has been formatted and opened in WhatsApp for direct communication.
+            {emailStatus === 'sent'
+              ? 'Your inquiry was emailed to our team and opened in WhatsApp for direct communication.'
+              : 'We could not send the email notification right now. Please send the pre-filled WhatsApp message below, or call us directly so your inquiry reaches the team.'}
           </p>
 
           <div
@@ -204,11 +209,11 @@ export const ContactForm: React.FC = () => {
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink)', fontWeight: 600 }}>
               <span style={{ color: '#25D366', fontSize: '1rem' }}>💬</span>
-              <span>WhatsApp Chat: Opened in your browser/app</span>
+              <span>WhatsApp Chat: Opened in your browser/app (use the button below if it did not open)</span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-ink)', fontWeight: 600 }}>
               <span style={{ fontSize: '1rem' }}>📧</span>
-              <span>Email Notification: {emailStatus === 'sent' ? 'Dispatched directly to management inbox' : 'Dispatched to team'}</span>
+              <span>Email Notification: {emailStatus === 'sent' ? 'Delivered to management inbox' : 'Not delivered — please use WhatsApp or call'}</span>
             </div>
           </div>
 
@@ -251,6 +256,19 @@ export const ContactForm: React.FC = () => {
       ) : (
         <form onSubmit={handleSubmit} noValidate>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.25rem' }}>
+            {/* Honeypot: hidden from people and assistive tech, filled in by bots */}
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+              <label htmlFor="form-website">Leave this field empty</label>
+              <input
+                id="form-website"
+                name="botcheck"
+                type="text"
+                tabIndex={-1}
+                autoComplete="off"
+                value={botcheck}
+                onChange={(e) => setBotcheck(e.target.value)}
+              />
+            </div>
             {/* Name */}
             <div>
               <label

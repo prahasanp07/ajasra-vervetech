@@ -94,7 +94,7 @@ export const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({
                 }}
               >
                 <img
-                  src="/images/ajasra-logo.png"
+                  src="/images/ajasra-logo.webp"
                   alt="Ajasra Logo"
                   style={{
                     width: '28px',
@@ -359,6 +359,7 @@ export const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({
                   src={infrastructure.images[2].src}
                   alt={infrastructure.images[2].alt}
                   loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -434,6 +435,7 @@ export const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({
                   src={infrastructure.images[0].src}
                   alt={infrastructure.images[0].alt}
                   loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -506,6 +508,7 @@ export const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({
                   src={infrastructure.images[1].src}
                   alt={infrastructure.images[1].alt}
                   loading="lazy"
+                  decoding="async"
                   style={{
                     width: '100%',
                     height: '100%',

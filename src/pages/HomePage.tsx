@@ -10,8 +10,15 @@ import { Applications } from '../components/sections/Applications';
 import { VisionMission } from '../components/sections/VisionMission';
 import { CTABanner } from '../components/sections/CTABanner';
 import { ContactSection } from '../components/sections/ContactSection';
+import { usePageMeta } from '../lib/usePageMeta';
 
 export const HomePage: React.FC = () => {
+  usePageMeta(
+    'Precision Hot Dip Galvanizing & Corrosion Protection',
+    'Specification-led hot dip galvanizing for iron, steel and ferrous alloys aligned with IS 2629. Based in Harohalli Industrial Area, Karnataka, India.',
+    '/'
+  );
+
   return (
     <>
       {/* Editorial Centered Hero with Industrial Visual */}
