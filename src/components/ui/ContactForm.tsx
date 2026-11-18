@@ -335,7 +335,7 @@ export const ContactForm: React.FC = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="+91 98765 43210"
+                  placeholder="+91 98765xxxxx"
                   aria-required="true"
                   aria-invalid={!!errors.phone}
                   aria-describedby={errors.phone ? 'error-phone' : undefined}

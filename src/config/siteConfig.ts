@@ -4,7 +4,7 @@ export const siteConfig = {
   whatsappNumber: "918296663245",
   phoneDisplay: "+91 82966 63245",
   phoneTel: "+918296663245",
-  email: "info@ajasravervetech.com",
+  email: "mailajasra@gmail.com",
   emailEndpoint: "/api/send-email.php",
   establishedYear: "2020",
   businessType: "Family-owned partnership firm",
@@ -16,7 +16,7 @@ export const siteConfig = {
   address: [
     "Plot No. 274-D/B, Road No. 5A",
     "2nd Phase, Harohalli Industrial Area",
-    "Kanakapura Taluk, Ramanagara District",
+    "Bengaluru South district",
     "Harohalli, Karnataka 562112",
     "India"
   ],

@@ -97,6 +97,14 @@ export const Hero: React.FC = () => {
               >
                 {hero.secondaryCta}
               </Button>
+
+              <Button
+                variant="lime"
+                size="lg"
+                href="/#certifications"
+              >
+                {hero.tertiaryCta}
+              </Button>
             </div>
           </div>
         </Reveal>

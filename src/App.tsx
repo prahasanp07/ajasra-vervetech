@@ -30,12 +30,20 @@ const ScrollToHashElement: React.FC = () => {
       const element = document.getElementById(id);
       if (element) {
         element.scrollIntoView({ behavior });
+        // Retry once more shortly after to account for any initial layout shifts
+        if (attempts < 2) {
+          attempts++;
+          timer = window.setTimeout(tryScroll, 150);
+        }
       } else if (attempts++ < 15) {
         timer = window.setTimeout(tryScroll, 100);
       }
     };
-    tryScroll();
-    return () => window.clearTimeout(timer);
+    const initialTimer = window.setTimeout(tryScroll, 50);
+    return () => {
+      window.clearTimeout(initialTimer);
+      window.clearTimeout(timer);
+    };
   }, [pathname, hash]);
 
   return null;

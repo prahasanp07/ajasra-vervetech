@@ -167,6 +167,7 @@ export const siteContent = {
     locationBadge: "Serving energy sectors and engineering products.",
     primaryCta: "Start a project",
     secondaryCta: "Explore our process",
+    tertiaryCta: "Vendor Standards",
     heroImage: "/images/ajasra-interior-1.webp",
     heroAlt: "Hot dip galvanizing facility with fabricated steel structure being immersed into zinc kettle"
   },
@@ -184,7 +185,7 @@ export const siteContent = {
     title: "Our Vision & Mission",
     vision: {
       title: "Our Vision",
-      text: "Our vision is to provide quality services to potential customers and prioritize customer satisfaction through environmentally friendly procedures, along with the help of team work and coordination to uphold human values at all points of time and inspiring each of us to believe that hard work and dedication can take us to great heights."
+      text: "Our vision is to provide quality services to customers and prioritize customer satisfaction through environmentally friendly procedures, along with the help of team work and coordination to uphold human values at all points of time and inspiring each of us to believe that hard work and dedication can take us to great heights."
     },
     mission: {
       title: "Our Mission",
@@ -212,9 +213,9 @@ export const siteContent = {
         summary:
           "An engineer and entrepreneur with over 32 years of rich industrial experience. He has held responsible senior positions in manufacturing, quality assurance, administration, equipment handling, and maintenance of greenfield projects at various large-scale multinational companies.",
         highlights: [
-          "Served as Department Manager & Deputy General Manager (DGM) at an MNC.",
-          "Independent technical consultant since June 2016, successfully establishing statutory approvals and execution for 2 greenfield projects.",
-          "Specialized expertise in designing, installation, and commissioning of 2 complete Hot Dip Galvanizing plants, along with CNC machining and hot forging lines.",
+          "Served as Factory Manager & Deputy General Manager (DGM) at an MNC.",
+          "Independent technical consultant since June 2016, successfully establishing statutory approvals and execution of greenfield projects.",
+          "Specialized expertise in designing, installation, and commissioning of complete Hot Dip Galvanizing plants, along with CNC machining and hot forging lines.",
           "Certified Lead Auditor for Quality Management Systems (ISO 9001).",
           "Certified Lead Auditor for Environmental Management Systems (ISO 14001)."
         ]
@@ -225,7 +226,7 @@ export const siteContent = {
         experience: "33+ Years Experience",
         education: "Bachelor of Arts (BA)",
         summary:
-          "An entrepreneur with over 33 years of professional and business experience. Having started her career in the industrial garment sector as a team lead supervisor for 4 years, she established and runs her own commercial enterprise with an emphasis on disciplined operations and quality execution.",
+          "An entrepreneur with over 33 years of professional and business experience. Having started her career in the industrial garment sector as a team lead supervisor, she established and runs her own commercial enterprise with an emphasis on disciplined operations and quality execution.",
         highlights: [
           "Over three decades of active entrepreneurship and organizational management.",
           "Experienced in team leadership, process supervision, and commercial operations.",
@@ -364,18 +365,18 @@ export const siteContent = {
     },
     images: [
       {
-        src: "/images/ajasra-interior-2.webp",
-        alt: "5000 sft industrial shed with 1000 sft mezzanine floor, in-house laboratory, and dedicated storage",
-        title: "5,000 sft Shed & 1,000 sft Mezzanine",
-        subtitle: "High-bay industrial facility with mezzanine supervisor floor, in-house laboratory, and organized stores.",
-        badge: "Plant Floor & Mezzanine"
-      },
-      {
         src: "/images/ajasra-interior-1.webp",
         alt: "2400 MT/annum hot dip galvanizing equipment line, wet scrubber exhaust ducting, and monorail handling",
         title: "2,400 MT/Annum Galvanizing Line",
         subtitle: "Full continuous tank line with overhead crane monorail, zinc kettle, and wet scrubber fume extraction.",
         badge: "Galvanizing Tank Line"
+      },
+      {
+        src: "/images/ajasra-interior-2.webp",
+        alt: "5000 sft industrial shed with 1000 sft mezzanine floor, in-house laboratory, and dedicated storage",
+        title: "5,000 sft Shed & 1,000 sft Mezzanine",
+        subtitle: "High-bay industrial facility with mezzanine supervisor floor, in-house laboratory, and organized stores.",
+        badge: "Plant Floor & Mezzanine"
       },
       {
         src: "/images/ajasra-interior-3.webp",
@@ -847,8 +848,8 @@ export const siteContent = {
         title: "Energy",
         description:
           "As an alternate source of energy, solar cells are more prone to external elements of rust, dust and decay. Galvanization helps in utilizing all of the energy provided by the solar cells.",
-        image: "/images/infrastructure-steel.webp",
-        alt: "Solar mounting purlins and renewable energy steel structures"
+        // image: "/images/infrastructure-steel.webp",
+        // alt: "Solar mounting purlins and renewable energy steel structures"
       },
       {
         id: "ind-general-engineering",
@@ -856,8 +857,8 @@ export const siteContent = {
         title: "General Engineering",
         description:
           "Engines, machines and structures wear out from time to time. It is advisable to keep them protected through galvanizing.",
-        image: "/images/steel-fabrication.webp",
-        alt: "Galvanized machinery, frames, and engineered steel assemblies"
+        // image: "/images/steel-fabrication.webp",
+        // alt: "Galvanized machinery, frames, and engineered steel assemblies"
       },
       {
         id: "ind-agricultural",
@@ -865,8 +866,8 @@ export const siteContent = {
         title: "Agricultural Equipments",
         description:
           "Farming equipment, irrigation systems, grain systems are open to the atmosphere and in desperate need of prevention of rust.",
-        image: "/images/infrastructure-steel.webp",
-        alt: "Galvanized agricultural structures and irrigation pipe components"
+        // image: "/images/infrastructure-steel.webp",
+        // alt: "Galvanized agricultural structures and irrigation pipe components"
       },
       {
         id: "ind-construction",
@@ -874,35 +875,35 @@ export const siteContent = {
         title: "Construction",
         description:
           "Street furniture, building frameworks, steel frames, balconies, verandahs, staircases, ladders and walkways are susceptible to oxygen and need to be coated with a layer of galvanized steel to make them more durable and safer.",
-        image: "/images/structural-steel.webp",
-        alt: "Galvanized structural steel frameworks and building frames"
+        // image: "/images/structural-steel.webp",
+        // alt: "Galvanized structural steel frameworks and building frames"
       },
-      {
-        id: "ind-hardwares",
-        index: "05",
-        title: "Hardwares",
-        description:
-          "We undertake galvanizing services for Pole line hardware, nuts and bolts, washers, hinges brackets, and other essential tools and equipment, fasteners, among others.",
-        image: "/images/zinc-kettle-dip.webp",
-        alt: "Centrifuge hot dip galvanized pole line hardware and fasteners"
-      },
+      // {
+      //   id: "ind-hardwares",
+      //   index: "05",
+      //   title: "Hardwares",
+      //   description:
+      //     "We undertake galvanizing services for Pole line hardware, nuts and bolts, washers, hinges brackets, and other essential tools and equipment, fasteners, among others.",
+      //   image: "/images/zinc-kettle-dip.webp",
+      //   alt: "Centrifuge hot dip galvanized pole line hardware and fasteners"
+      // },
       {
         id: "ind-automotive",
-        index: "06",
+        index: "05",
         title: "Automotive",
         description:
           "Skeletal body of the vehicles, Bumpers and Reinforcements, Door Beams and Seatings, Chassis and Frames are vulnerable to rust and need to be galvanized periodically.",
-        image: "/images/facility-logistics.webp",
-        alt: "Automotive chassis, brackets, and tubular frame galvanizing"
+        // image: "/images/facility-logistics.webp",
+        // alt: "Automotive chassis, brackets, and tubular frame galvanizing"
       },
       {
         id: "ind-shipping",
-        index: "07",
+        index: "06",
         title: "Shipping",
         description:
           "Gear and ring locks, boat trailers, connecting rods, anchor lifting shackle are liable to corrosion. Help prevent and protect them through our galvanizing services.",
-        image: "/images/galvanizing-hero.webp",
-        alt: "Marine hardware, boat trailers, and anchor lifting shackles"
+        // image: "/images/galvanizing-hero.webp",
+        // alt: "Marine hardware, boat trailers, and anchor lifting shackles"
       }
     ] as IndustryItem[]
   },
@@ -916,23 +917,23 @@ export const siteContent = {
         id: 'all',
         label: 'All Components',
         icon: '🏭',
-        slideRef: 'Slides 8–12',
-        count: 18,
+        slideRef: '',
+        count: 17,
         description: 'Complete gallery of precision galvanized ferrous parts, hardware, and fabricated assemblies.'
       },
       {
         id: 'energy',
         label: 'Energy Sector',
         icon: '⚡',
-        slideRef: 'Slide 8',
-        count: 4,
+        slideRef: '',
+        count: 3,
         description: 'High-voltage transmission line hardware, porcelain insulator pins, drop-forged socket eyes, and substation switchgear brackets.'
       },
       {
         id: 'construction',
         label: 'Construction',
         icon: '🏗️',
-        slideRef: 'Slide 9',
+        slideRef: '',
         count: 3,
         description: 'Scaffolding hook clamps, formwork hardware, serrated channel saddle clamps, and pre-engineered building (PEB) purlin cleats.'
       },
@@ -940,7 +941,7 @@ export const siteContent = {
         id: 'metro',
         label: 'Metro Rail & Transit',
         icon: '🚇',
-        slideRef: 'Slide 11',
+        slideRef: '',
         count: 4,
         description: 'Underground tunnel cable tray cantilever racks, curved tunnel lining wall brackets, and trackside signaling structural beams.'
       },
@@ -948,7 +949,7 @@ export const siteContent = {
         id: 'engineering',
         label: 'General Engineering',
         icon: '⚙️',
-        slideRef: 'Slides 10 & 12',
+        slideRef: '',
         count: 7,
         description: 'Heavy structural base plates, machinery panel framing, welded cantilever arms, helical ground anchors, and mounting clamps.'
       }
@@ -991,18 +992,18 @@ export const siteContent = {
         alt: 'Galvanized forged clevis link for electrical substations',
         specHighlights: ['Heavy mechanical loading', 'Smooth metallic finish', 'Salt-fog resistant']
       },
-      {
-        id: 'energy-transformer-bracket',
-        title: 'Transformer & Switchgear Mounting Bracket',
-        category: 'energy',
-        categoryLabel: 'Energy Sector',
-        tag: 'Switchgear & Power',
-        slideNumber: 8,
-        description: 'Fabricated heavy-gauge steel connector bracket with slotted mounting apertures for outdoor distribution transformers and electrical busbars.',
-        image: '/images/components/energy-transformer-bracket.webp',
-        alt: 'Galvanized transformer and electrical switchgear mounting bracket',
-        specHighlights: ['Heavy plate gauge', 'Slotted tolerance holes', 'Complete interior hole coating']
-      },
+      // {
+      //   id: 'energy-transformer-bracket',
+      //   title: 'Transformer & Switchgear Mounting Bracket',
+      //   category: 'energy',
+      //   categoryLabel: 'Energy Sector',
+      //   tag: 'Switchgear & Power',
+      //   slideNumber: 8,
+      //   description: 'Fabricated heavy-gauge steel connector bracket with slotted mounting apertures for outdoor distribution transformers and electrical busbars.',
+      //   image: '/images/components/energy-transformer-bracket.webp',
+      //   alt: 'Galvanized transformer and electrical switchgear mounting bracket',
+      //   specHighlights: ['Heavy plate gauge', 'Slotted tolerance holes', 'Complete interior hole coating']
+      // },
 
       // Slide 9: Construction
       {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'lime' | 'outline-white' | 'whatsapp';
@@ -34,6 +35,14 @@ export const Button: React.FC<ButtonProps> = ({
   );
 
   if (href) {
+    if (!isExternal && href.startsWith('/')) {
+      return (
+        <Link to={href} className={combinedClasses}>
+          {content}
+        </Link>
+      );
+    }
+
     return (
       <a
         href={href}

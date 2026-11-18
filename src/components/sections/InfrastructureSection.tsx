@@ -588,7 +588,7 @@ export const InfrastructureSection: React.FC<InfrastructureSectionProps> = ({
                   href={createQuickStartWhatsAppUrl("zinc bath dimensions & capacity")}
                   isExternal
                 >
-                  Chat with Engineers
+                  Chat
                 </Button>
               </div>
             </Reveal>

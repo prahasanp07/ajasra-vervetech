@@ -17,7 +17,9 @@ export const ServicesPage: React.FC = () => {
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   const { processFlowTanks } = siteContent;
@@ -198,7 +200,14 @@ export const ServicesPage: React.FC = () => {
       <InfrastructureSection variant="paper" />
 
       {/* HOW WE DO IT - 12-Stage Plant Flow & Process Architecture */}
-      <section id="process" className="site-container" style={{ marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)' }}>
+      <section
+        id="process"
+        className="site-container"
+        style={{
+          marginBottom: 'clamp(3.5rem, 6vw, 5.5rem)',
+          scrollMarginTop: 'calc(var(--header-height) + 1.5rem)'
+        }}
+      >
         <Reveal>
           <div style={{ textAlign: 'center', maxWidth: '780px', margin: '0 auto clamp(2rem, 4vw, 3rem)' }}>
             <div className="eyebrow-badge">
@@ -228,7 +237,15 @@ export const ServicesPage: React.FC = () => {
         </Reveal>
 
         {/* Categorized Phase-by-Phase Technical Engineering Breakdown */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 4vw, 3rem)' }}>
+        <div
+          id="process-specifications"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 'clamp(2rem, 4vw, 3rem)',
+            scrollMarginTop: 'calc(var(--header-height) + 1.5rem)'
+          }}
+        >
           {/* Phase 1: Chemical Pretreatment */}
           <Reveal delay={100}>
             <div

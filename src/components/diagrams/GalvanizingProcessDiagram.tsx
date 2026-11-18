@@ -1105,6 +1105,7 @@ export const GalvanizingProcessDiagram: React.FC<GalvanizingProcessDiagramProps>
             </div>
 
             {/* Right: Technical Telemetry (Temperature, Chemistry, Dwell Time) */}
+            {/*
             <div
               style={{
                 backgroundColor: isDark ? 'rgba(11, 23, 36, 0.7)' : 'var(--color-paper-subtle)',
@@ -1148,6 +1149,7 @@ export const GalvanizingProcessDiagram: React.FC<GalvanizingProcessDiagramProps>
                 <span>Code: IS-2629 / Harohalli</span>
               </div>
             </div>
+            */}
           </div>
         </div>
       )}

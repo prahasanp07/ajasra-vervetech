@@ -98,7 +98,7 @@ if (empty($name) || empty($phone) || empty($materialDetails)) {
 }
 
 // 5. Configure Email Parameters
-$toEmail = 'info@ajasravervetech.com'; // Primary recipient inbox
+$toEmail = 'mailajasra@gmail.com'; // Primary recipient inbox
 $subject = "New Hot Dip Galvanizing Inquiry from " . $rawName;
 
 // Fallback formatted text if details exist
